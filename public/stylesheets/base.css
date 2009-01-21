@@ -51,8 +51,8 @@ blockquote, q {
 p.notice,
 p.warning,
 p.error {
-  font-size: 18px;
-  padding: 15px 10px;
+  font-size: 16px;
+  padding: 17px 10px 18px 10px;
   margin-bottom: 10px;
 }
 

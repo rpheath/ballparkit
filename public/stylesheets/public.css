@@ -1,0 +1,20 @@
+#wrapper {
+  margin: 50px auto 25px auto;
+  width: 500px;
+}
+#login {
+  border: 10px solid #eee;
+  color: #777;
+  padding: 20px;
+}
+#login label {
+  display: block;
+}
+#login input#openid_url {
+  width: 400px;
+  padding: 5px 5px 5px 30px;
+  font-size: 17px;
+  margin: 8px 0;
+  background: url(../images/openid.jpg) no-repeat 5px center;
+  border: 1px solid #ccc;
+}

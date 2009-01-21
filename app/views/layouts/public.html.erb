@@ -5,10 +5,14 @@
     <title>Ballpark | Estimates made easy.</title>
 	  <meta name="Author" content="Ryan Heath" />
 	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	  <%= stylesheet_link_tag 'base', 'application' %>
+	  <%= stylesheet_link_tag 'base', 'public' %>
 	  <%= google_jquery %>
+	  <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <%= display_flash_messages %>
+      <%= yield %>
+    </div>
   </body>
 </html>
