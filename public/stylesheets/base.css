@@ -1,0 +1,92 @@
+/* CSS RESET - Courtesy of Eric Meyer */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+	font-family: 'lucida grande', helvetica, sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* END CSS RESET */
+
+p.notice,
+p.warning,
+p.error {
+  font-size: 18px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+
+p.notice span,
+p.warning span,
+p.error span {
+  float: left;
+  width: 42px;
+  height: 32px;
+  margin-top: -5px;
+}
+
+p.notice {
+  background: url(../images/flash-notice-bg.jpg) repeat-x left top;
+  color: #41612f; 
+}
+p.notice span {
+  background: url(../images/flash-check.png) no-repeat left top;
+}
+
+p.warning {
+  background: url(../images/flash-warning-bg.jpg) repeat-x left -10px;
+  color: #a26a1a;
+}
+p.warning span {
+  margin-top: -6px;
+  background: url(../images/flash-warning.png) no-repeat left top;
+}
+
+p.error {
+  background: url(../images/flash-error-bg.jpg) repeat-x left -10px;
+  color: #af0100;
+}
+p.error span {
+  margin-top: -6px;
+  background: url(../images/flash-error.png) no-repeat left top;
+}
