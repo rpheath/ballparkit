@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     openid_authentication
   rescue Exception => e
-    flash[:error] = e.message
+    error e.message
     redirect_to login_path
   end
   

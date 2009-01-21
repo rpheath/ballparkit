@@ -22,12 +22,12 @@ module Ballpark
         end
         
         def successful_login(message = nil)
-          flash[:notice] = message || "Successful! Welcome, #{current_user.fullname}"
+          notice message || "Successful! Welcome, #{current_user.fullname}"
           redirect_to root_path
         end
 
         def failed_login(message = nil)
-          flash[:error] = message || "Sorry, Ballpark was unable to log you in at this time."
+          error message || "Sorry, Ballpark was unable to log you in at this time."
           redirect_to login_path
         end
     end

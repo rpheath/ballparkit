@@ -20,7 +20,7 @@ module Ballpark
         end
     
         def access_denied
-          flash[:error] = "Access denied. You must first login."
+          error "Access denied. You must first login."
           redirect_to login_path
         end
 
