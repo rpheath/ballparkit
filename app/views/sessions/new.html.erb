@@ -1,0 +1,7 @@
+<div id="login">
+  <% form_tag session_path do %>
+    <label>Login with OpenID:</label>
+    <%= text_field_tag :openid_url, nil %>
+    <%= submit_tag 'Login' %>
+  <% end -%>
+</div>
