@@ -17,10 +17,6 @@ module Ballpark
         end
         
       private
-        def blank_openid_url?
-          params[:openid_url].blank?
-        end
-        
         def successful_login(message = nil)
           notice message || "Successful! Welcome, #{current_user.fullname}"
           redirect_to root_path
