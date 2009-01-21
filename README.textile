@@ -1,12 +1,15 @@
 h1. "It's just a ballpark figure"
 
-Ballpark is a tool that allows developers to estimate programming and/or design gigs. The idea is to give potential clients an summary of the project breakdown, so you can justify why you're charging so much :-)
+Ballpark is a tool that allows developers to estimate programming and/or design gigs. The idea is to give potential clients a summary of the project breakdown, where the expensive parts live, etc.
+
+But most importantly, you can justify why you're charging so much :-)
 
 h2. Getting Started
 
 From the project root...
 
 * mv database.yml.example database.yml
+* (configure database.yml)
 * rake db:create:all
 * rake db:schema:load
 
