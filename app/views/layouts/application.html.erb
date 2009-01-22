@@ -10,8 +10,19 @@
 	  <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <%= display_flash_messages %>
+    <div id="wrapper">
+      <div id="hdr">
+        <h1>
+          <span><%= current_user.name %><br /><%= link_to 'Sign Out', logout_path %></span>
+          Ballpark It
+        </h1>
+        
+        <%= navigation [:estimates, :settings] %>
+      </div>
+      
+      <%= display_flash_messages %>
     
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
