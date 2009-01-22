@@ -42,4 +42,8 @@ public
       create_from_sreg!(identity_url, registration)
     end
   end
+  
+  def name
+    fullname.titleize
+  end
 end
