@@ -7,6 +7,7 @@
 
 <table class="tasks">
   <tr>
+    <th></th>
     <th class="description"><label>Task Description</label></th>
     <th class="hours"><label>Hours</label></th>
     <th class="rate"><label>Rate</label></th>
@@ -15,6 +16,10 @@
   <%= form.partial 'task', :collection => @estimate.tasks, :locals => { :f => form } %>
 </table>
 
+<br />
+
+<%= link_to image_tag('add.png') + ' Add Task', '#', :class => 'new' %>
+
 <div id="total">
-  Estimated Total: <span>$0.00</span>
+  Total Estimate: <span>$0.00</span>
 </div>

@@ -59,7 +59,6 @@ table td.rate {
 }
 table.tasks {
   margin-bottom: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 table.tasks td {
   padding: 5px 0;
@@ -72,8 +71,9 @@ table.tasks td.estimate {
   font-size: 14px;
   color: #999;
 }
-table.tasks td.description {
+table.tasks td.option {
   padding-left: 5px;
+  vertical-align: middle;
 }
 table.tasks td.estimate {
   padding-right: 5px;
