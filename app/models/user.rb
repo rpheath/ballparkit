@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :estimates
+  has_many :tasks
+  
   validates_presence_of :identity_url, :fullname, :email
   validates_uniqueness_of :identity_url
   
