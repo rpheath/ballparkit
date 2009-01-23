@@ -12,39 +12,46 @@
   font-size: 35px;
   color: #555;
   letter-spacing: -1px;
+  display: inline;
+  position: relative;
+  padding-right: 145px;
 }
-#hdr h1 span {
+#hdr h1 span.group {
   color: #999;
   font-size: 18px;
-  float: right;
   border-left: 1px solid #ddd;
-  padding-left: 10px;
+  padding-left: 12px;
   line-height: 115%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#hdr h1 span.group span {
+  font-size: 13px;
 }
 #hdr h1 span a {
-  font-size: 13px;
   color: inherit;
 }
 #hdr h1 span a:hover {
   color: #111;
 }
 ul.navigation {
-  margin-left: 100px;
   position: absolute;
-  top: 0;
-  left: 80px;
+  top: 5px;
+  right: 0;
 }
 ul.navigation li {
   float: left;
-  margin-right: 2px;
+  margin-left: 2px;
 }
 ul.navigation li a {
   display: block;
-  padding: 20px 20px 25px 20px;
+  padding: 20px;
   font-size: 20px;
   text-transform: lowercase;
   color: #777;
   text-decoration: none;
+  background: #f9f9f9;
 }
 ul.navigation li a:hover {
   color: #444;

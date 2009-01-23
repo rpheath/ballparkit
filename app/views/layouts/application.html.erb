@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
   <head>
-    <title>Ballpark | Estimates made easy.</title>
+    <title>Ballpark It | Estimates made easy.</title>
 	  <meta name="Author" content="Ryan Heath" />
 	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	  <%= stylesheet_link_tag 'base', 'application' %>
@@ -13,7 +13,10 @@
     <div id="wrapper">
       <div id="hdr">
         <h1>
-          <span><%= current_user.name %><br /><%= link_to 'Sign Out', logout_path %></span>
+          <span class="group">
+            <%= current_user.name %><br />
+            <span><%= link_to 'New Estimate', new_estimate_path %> | <%= link_to 'Sign Out', logout_path %></span>
+          </span>
           Ballpark It
         </h1>
         
