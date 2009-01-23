@@ -6,7 +6,7 @@
 #hdr {
   border-bottom: 10px solid #e7e7e7;
   padding: 10px 0 20px 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 #hdr h1 {
   font-size: 35px;
@@ -40,6 +40,9 @@
 }
 #hdr h1 span a:hover {
   color: #111;
+}
+#content {
+  margin-top: 20px;
 }
 ul.navigation {
   position: absolute;
