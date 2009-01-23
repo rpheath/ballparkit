@@ -5,7 +5,7 @@ class EstimatesController < ApplicationController
   
   def new
     @estimate = Estimate.new
-    3.times { @estimate.tasks.build }
+    10.times { @estimate.tasks.build }
   end
   
   def create
@@ -14,7 +14,7 @@ class EstimatesController < ApplicationController
     notice "Successfully created an estimate for: #{@estimate.title}"
     redirect_to estimates_path
   rescue ActiveRecord::RecordInvalid
-    error "Invalid estimate"
+    @estimate.tasks.build params[:estimate][:_tasks]
     render :action => 'new'
   end
 end

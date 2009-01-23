@@ -48,6 +48,12 @@ blockquote, q {
 
 /* END CSS RESET */
 
+a {
+  color: inherit;
+}
+a:hover {
+  color: #111;
+}
 p.notice,
 p.warning,
 p.error {

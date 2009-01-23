@@ -44,6 +44,110 @@
 #content {
   margin-top: 20px;
 }
+table {
+  width: 100%;
+  margin-bottom: 25px;
+}
+table td.title {
+  width: 78%;
+}
+table td.rate {
+  text-align: right;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+table.tasks {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+table.tasks td {
+  padding: 5px 0;
+  text-align: left;
+}
+table.tasks td.description,
+table.tasks td.hours,
+table.tasks td.rate,
+table.tasks td.estimate {
+  font-size: 14px;
+  color: #999;
+}
+table.tasks td.description {
+  padding-left: 5px;
+}
+table.tasks td.estimate {
+  padding-right: 5px;
+}
+table.tasks td.description input.text,
+table.tasks td.hours input.text,
+table.tasks td.rate input.text {
+  width: 75%;
+  font-size: 13px;
+  padding: 2px;
+}
+table.tasks td.hours input.text,
+table.tasks td.rate input.text {
+  margin: 0 10px 0 0;
+  width: 65px;
+}
+table.tasks td.description {
+  width: 50%;
+}
+table.tasks td.hours,
+table.tasks td.rate {
+  width: 14%;
+  padding-right: 10px;
+}
+table.tasks td.estimate {
+  color: #333;
+}
+table.tasks td.estimate,
+th.estimate {
+  text-align: right;
+}
+table tr.odd {
+  background: #f1f1f1;
+}
+table tr.odd td {
+  border: 1px solid #e5e5e5;
+  border-left: 0;
+  border-right: 0;
+}
+div#total {
+  border-top: 3px dashed #bbb;
+  padding-top: 10px;
+  text-align: right;
+  font-size: 25px;
+  color: #bbb;
+  margin: 20px 0 30px 0;
+}
+div#total span {
+  color: #333;
+  font-weight: bold;
+}
+label {
+  color: #999;
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+input.big {
+  font-size: 18px;
+  padding: 5px;
+  width: 95%;
+}
+p.submission {
+  margin: 5px 0 20px 0;
+  border-top: 10px solid #e7e7e7;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #888;
+}
+p.submission input.submit {
+  margin-right: 3px;
+}
 ul.navigation {
   position: absolute;
   top: 5px;

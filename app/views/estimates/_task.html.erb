@@ -1,6 +1,11 @@
-<% fields_for 'estimate[_tasks][]', task do |estimate_task| %>
-  <%= estimate_task.text_field :description %>:
-  <%= estimate_task.text_field :hours %> x <%= estimate_task.text_field :rate %>
-  <br />
-  <%= estimate_task.hidden_field :id %>
-<% end %>
+<tr class="<%= cycle 'odd', nil %>">
+  <% fields_for 'estimate[_tasks][]', task do |estimate_task| %>
+    <td class="description"><%= estimate_task.text_field :description %></td>
+    <td class="hours"><%= estimate_task.text_field :hours %> x </td>
+    <td class="rate"><%= estimate_task.text_field :rate %> = </td>
+    <td class="estimate">
+      $0
+      <%= estimate_task.hidden_field :id %>
+    </td>
+  <% end %>
+</tr>

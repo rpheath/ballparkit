@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td class="title"><%= form.text_field :title, :label => 'Project Title', :class => 'big' %></td>
+    <td class="rate"><label>Default Hourly Rate</label><%= number_to_currency '80' %></td>
+  </tr>
+</table>
+
+<table class="tasks">
+  <tr>
+    <th class="description"><label>Task Description</label></th>
+    <th class="hours"><label>Hours</label></th>
+    <th class="rate"><label>Rate</label></th>
+    <th class="estimate"><label>Estimated Fee</label></th>
+  </tr>
+  <%= form.partial 'task', :collection => @estimate.tasks, :locals => { :f => form } %>
+</table>
+
+<div id="total">
+  Estimated Total: <span>$0.00</span>
+</div>
