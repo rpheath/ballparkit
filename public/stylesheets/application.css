@@ -14,11 +14,14 @@
   letter-spacing: -1px;
   display: inline;
   position: relative;
-  padding-right: 145px;
+  padding-right: 160px;
+}
+#hdr h1 a.logo {
+  float: left;
 }
 #hdr h1 span.group {
   color: #999;
-  font-size: 18px;
+  font-size: 20px;
   border-left: 1px solid #ddd;
   padding-left: 12px;
   line-height: 115%;
@@ -31,6 +34,9 @@
 }
 #hdr h1 span a {
   color: inherit;
+}
+#hdr h1 span a img {
+  margin: 0 4px -5px -4px;
 }
 #hdr h1 span a:hover {
   color: #111;
@@ -60,5 +66,5 @@ ul.navigation li a:hover {
 ul.navigation li.current a,
 ul.navigation li.current a:hover {
   background: #e7e7e7;
-  color: #003894;
+  color: #325270;
 }

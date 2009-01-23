@@ -15,9 +15,13 @@
         <h1>
           <span class="group">
             <%= current_user.name %><br />
-            <span><%= link_to 'New Estimate', new_estimate_path %> | <%= link_to 'Sign Out', logout_path %></span>
+            <span>
+              <%= link_to image_tag('new_estimate.png', :alt => 'New Estimate'), new_estimate_path %> 
+              <%= link_to 'Sign Out', logout_path %>
+            </span>
           </span>
-          Ballpark It
+          
+          <%= link_to image_tag('ballparkit.png', :alt => 'Ballpark It'), root_path, :class => 'logo' %>
         </h1>
         
         <%= navigation [:estimates, :settings] %>
