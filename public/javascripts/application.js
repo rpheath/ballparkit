@@ -22,7 +22,7 @@ $(document).ready(function() {
     var table = $('table.tasks'),
         row = $('table.tasks tr:last').clone(true);
     
-    $(row).find('td input.text').each(function(i) {
+    $(row).find('td input').each(function(i) {
       $(this).val('');
       $(this).attr('name', $(this).attr('name').replace(/\d+/, ''));
       $(this).attr('id', $(this).attr('id').replace(/\d+/, ''));
