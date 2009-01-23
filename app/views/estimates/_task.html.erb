@@ -1,0 +1,6 @@
+<% fields_for 'estimate[_tasks][]', task do |estimate_task| %>
+  <%= estimate_task.text_field :description %>:
+  <%= estimate_task.text_field :hours %> x <%= estimate_task.text_field :rate %>
+  <br />
+  <%= estimate_task.hidden_field :id %>
+<% end %>

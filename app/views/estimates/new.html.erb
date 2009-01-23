@@ -1,0 +1,5 @@
+<% form_for @estimate do |form| %>
+  <%= form.text_field :title %><br />
+  <%= render :partial => 'task', :collection => @estimate.tasks, :locals => { :f => form } %>
+  <%= submit_tag 'Save Estimate' %>
+<% end %>
