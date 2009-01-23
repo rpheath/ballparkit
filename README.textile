@@ -1,8 +1,8 @@
 h1. "It's just a ballpark figure"
 
-Ballpark is a tool that allows developers to estimate programming and/or design gigs. The idea is to give potential clients a summary of the project breakdown, where the expensive parts live, etc.
+Ballpark is a tool that allows developers to estimate programming and/or design gigs. The idea is to give potential clients a summary of the project breakdown, where the expensive parts live, and so on.
 
-But most importantly, you can justify why you're charging so much :-)
+But most importantly, it's a way for you to justify why you're charging so much :-)
 
 h2. Getting Started
 
@@ -12,9 +12,10 @@ From the project root...
 * (configure database.yml)
 * rake db:create:all
 * rake db:schema:load
+* script/server
 
 h2. License
 
 Ballpark is completely open-source. Fork it. Host it. Enjoy it.
 
-Copyright (c) 2008 Ryan Heath, released under the MIT license
+(c) 2009 Ryan Heath, released under the MIT license
