@@ -1,1 +1,10 @@
-<p>Find me in app/views/estimates/index.html.erb</p>
+<ul>
+  <% @estimates.each do |estimate| %>
+    <li class="<%= cycle 'odd', nil %>">
+      <%= estimate.title %> (<%= number_to_currency estimate.total %>)
+      <%= link_to estimate.title, estimate %>
+      | <%= link_to 'Edit', edit_estimate_path(estimate) %>
+      | <%= link_to 'Delete', estimate, :method => :delete, :confirm => 'Are you sure?' %>
+    </li>
+  <% end %>
+</ul>
