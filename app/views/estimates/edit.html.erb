@@ -1,0 +1,6 @@
+<% form_assistant_for @estimate do |form| %>
+  <%= form.partial 'form', :locals => { :form => form } %>
+  <p class="submission">
+    <%= submit_tag 'Save Estimate' %> or <%= form.cancel %>
+  </p>
+<% end %>
