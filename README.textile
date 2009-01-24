@@ -10,6 +10,7 @@ From the project root...
 
 * mv database.yml.example database.yml
 * (configure database.yml)
+* rake gems:install
 * rake db:create:all
 * rake db:schema:load
 * script/server

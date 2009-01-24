@@ -18,11 +18,12 @@
 }
 #hdr h1 a.logo {
   float: left;
+  margin-top: -4px;
 }
 a#new-estimate {
   position: absolute;
-  top: 30px;
-  right: 275px;
+  top: 20px;
+  right: 265px;
 }
 #hdr h1 span.group {
   color: #999;
