@@ -14,15 +14,14 @@
       <div id="hdr">
         <h1>
           <span class="group">
-            <%= current_user.name %><br />
-            <span>
-              <%= link_to image_tag('new_estimate.png', :alt => 'New Estimate'), new_estimate_path %> 
-              <%= link_to 'Sign Out', logout_path %>
-            </span>
+            <%= current_user.name %>
+            <span><%= link_to 'Sign Out', logout_path %></span>
           </span>
           
           <%= link_to image_tag('ballparkit.png', :alt => 'Ballpark It'), root_path, :class => 'logo' %>
         </h1>
+        
+        <%= link_to image_tag('new_estimate.png', :alt => 'New Estimate'), new_estimate_path, :id => 'new-estimate' %>
         
         <%= navigation [:estimates, :settings] %>
       </div>

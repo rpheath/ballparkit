@@ -14,23 +14,29 @@
   letter-spacing: -1px;
   display: inline;
   position: relative;
-  padding-right: 160px;
+  padding-right: 120px;
 }
 #hdr h1 a.logo {
   float: left;
+}
+a#new-estimate {
+  position: absolute;
+  top: 30px;
+  right: 275px;
 }
 #hdr h1 span.group {
   color: #999;
   font-size: 20px;
   border-left: 1px solid #ddd;
   padding-left: 12px;
-  line-height: 115%;
+  line-height: 120%;
   position: absolute;
   top: 0;
   right: 0;
 }
 #hdr h1 span.group span {
   font-size: 13px;
+  display: block;
 }
 #hdr h1 span a {
   color: inherit;
@@ -81,7 +87,7 @@ table.tasks td.estimate {
 table.tasks td.description input.text,
 table.tasks td.hours input.text,
 table.tasks td.rate input.text {
-  width: 75%;
+  width: 80%;
   font-size: 13px;
   padding: 2px;
 }
@@ -91,7 +97,7 @@ table.tasks td.rate input.text {
   width: 65px;
 }
 table.tasks td.description {
-  width: 50%;
+  width: 49%;
 }
 table.tasks td.hours,
 table.tasks td.rate {
@@ -136,7 +142,7 @@ label {
 input.big {
   font-size: 18px;
   padding: 5px;
-  width: 95%;
+  width: 96%;
 }
 p.submission {
   margin: 5px 0 20px 0;
