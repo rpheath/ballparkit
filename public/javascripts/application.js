@@ -12,7 +12,9 @@ $(document).ready(function() {
   
   $(':input:visible:enabled:first').focus()
   
-  $('form a[rel="reset"]').click(function() {
+  $('a[rel*=facebox]').facebox()
+  
+  $('form a[rel*=reset]').click(function() {
     $(this).parents('form')[0].reset()
     return false
   })

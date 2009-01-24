@@ -1,6 +1,7 @@
 <tr class="task <%= cycle 'odd', nil %>">
   <td class="option"><%= f.remove_link image_tag('delete.png') %></td>
   <td class="description"><%= f.text_field :description %></td>
+  <td class="default"><%= f.check_box :default %></td>
   <td class="hours"><%= f.text_field :hours %> x </td>
   <td class="rate"><%= f.text_field :rate %> = </td>
   <td class="estimate"><span>$0</span></td>

@@ -9,6 +9,7 @@
   <tr>
     <th></th>
     <th class="description"><label>Task Description</label></th>
+    <th class="default"><label>Default <span>(<%= link_to '?', '#default', :rel => 'facebox' %>)</span></label></th>
     <th class="hours"><label>Hours</label></th>
     <th class="rate"><label>Rate</label></th>
     <th class="estimate"><label>Estimated Fee</label></th>
@@ -22,4 +23,9 @@
 
 <div id="total">
   Total Estimate: <span>$0.00</span>
+</div>
+
+<div id="default" style="display:none">
+  <h1>What is a default task?</h1>
+  <p>Any task that you deem as a default will automatically show up when you create a new estimate.</p>
 </div>

@@ -133,21 +133,24 @@ table.tasks td.estimate {
 table.tasks td.description input.text,
 table.tasks td.hours input.text,
 table.tasks td.rate input.text {
-  width: 80%;
+  width: 90%;
   font-size: 13px;
   padding: 2px;
 }
 table.tasks td.hours input.text,
 table.tasks td.rate input.text {
   margin: 0 10px 0 0;
-  width: 65px;
+  width: 55px;
 }
 table.tasks td.description {
-  width: 49%;
+  width: 40%;
+}
+table.tasks td.default {
+  width: 15%;
 }
 table.tasks td.hours,
 table.tasks td.rate {
-  width: 14%;
+  width: 13%;
   padding-right: 10px;
 }
 table.tasks td.estimate {
@@ -184,6 +187,12 @@ label {
   font-weight: normal;
   text-transform: uppercase;
   margin-bottom: 5px;
+}
+label span {
+  color: #ccc;
+}
+label a {
+  margin: 0 2px;
 }
 input.big {
   font-size: 18px;
