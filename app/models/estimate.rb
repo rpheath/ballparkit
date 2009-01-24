@@ -1,5 +1,5 @@
 class Estimate < ActiveRecord::Base
-  has_many :tasks, :attributes => true
+  has_many :tasks, :attributes => true, :dependent => :nullify
   
   validates_presence_of :title
   

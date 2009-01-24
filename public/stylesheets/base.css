@@ -96,3 +96,7 @@ p.error span {
   margin-top: -6px;
   background: url(../images/flash-error.png) no-repeat left top;
 }
+
+.errors {
+  color: #af0100;
+}

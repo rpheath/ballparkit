@@ -1,5 +1,5 @@
 var hideFlashes = function() {
-  $('p.notice, p.warning, p.error').fadeOut(1500);
+  $('p.notice, p.warning, p.error').fadeOut(1500)
 }
 
 $.fn.zebra = function() {
@@ -11,4 +11,15 @@ $(document).ready(function() {
   setTimeout(hideFlashes, 25000);
   
   $(':input:visible:enabled:first').focus()
+  
+  $('form a[rel="reset"]').click(function() {
+    $(this).parents('form')[0].reset()
+    return false
+  })
+  
+  $('ul.estimates li').mouseover(function() {
+    $(this).addClass('highlight').find('span.options').show();
+  }).mouseout(function() {
+    $(this).removeClass('highlight').find('span.options').hide();
+  })
 });
