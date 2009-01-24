@@ -1,6 +1,6 @@
 class EstimatesController < ApplicationController
   def index
-    @estimates = current_user.estimates
+    @estimates = Estimate.paginated(current_user, params[:page])
   end
   
   def new
