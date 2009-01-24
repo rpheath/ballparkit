@@ -1,12 +1,7 @@
-<tr class="<%= cycle 'odd', nil %>">
-  <% fields_for 'estimate[_tasks][]', task do |estimate_task| %>
-    <td class="option"><%= link_to image_tag('delete.png'), '#', :class => 'delete' %></td>
-    <td class="description"><%= estimate_task.text_field :description %></td>
-    <td class="hours"><%= estimate_task.text_field :hours %> x </td>
-    <td class="rate"><%= estimate_task.text_field :rate %> = </td>
-    <td class="estimate">
-      <span>$0</span>
-      <%= estimate_task.hidden_field :id %>
-    </td>
-  <% end %>
+<tr class="task <%= cycle 'odd', nil %>">
+  <td class="option"><%= f.remove_link image_tag('delete.png') %></td>
+  <td class="description"><%= f.text_field :description %></td>
+  <td class="hours"><%= f.text_field :hours %> x </td>
+  <td class="rate"><%= f.text_field :rate %> = </td>
+  <td class="estimate"><span>$0</span></td>
 </tr>

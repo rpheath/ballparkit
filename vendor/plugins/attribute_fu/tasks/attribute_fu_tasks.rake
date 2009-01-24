@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :associated_save do
+# task :attribute_fu do
 #   # Task goes here
 # end

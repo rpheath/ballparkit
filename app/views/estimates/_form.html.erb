@@ -5,7 +5,7 @@
   </tr>
 </table>
 
-<table class="tasks">
+<table id="tasks" class="tasks">
   <tr>
     <th></th>
     <th class="description"><label>Task Description</label></th>
@@ -13,12 +13,12 @@
     <th class="rate"><label>Rate</label></th>
     <th class="estimate"><label>Estimated Fee</label></th>
   </tr>
-  <%= form.partial 'task', :collection => @estimate.tasks, :locals => { :f => form } %>
+  <%= form.render_associated_form @estimate.tasks, :new => @estimate.new_record? ? 10 : nil %>
 </table>
 
 <br />
 
-<%= link_to image_tag('add.png') + ' Add Task', '#', :class => 'new' %>
+<%= form.add_associated_link image_tag('add.png') + ' Add Task', @estimate.tasks.build %>
 
 <div id="total">
   Total Estimate: <span>$0.00</span>

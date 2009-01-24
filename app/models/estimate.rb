@@ -1,6 +1,5 @@
 class Estimate < ActiveRecord::Base
-  has_many :tasks
-  associated_save :tasks
+  has_many :tasks, :attributes => true
   
   validates_presence_of :title
   
