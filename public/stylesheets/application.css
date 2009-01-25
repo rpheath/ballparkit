@@ -194,6 +194,11 @@ label span {
 label a {
   margin: 0 2px;
 }
+p.inline label {
+  display: inline;
+  text-transform: none;
+  color: #333;
+}
 input.big {
   font-size: 18px;
   padding: 5px;

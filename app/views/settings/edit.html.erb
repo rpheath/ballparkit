@@ -1,4 +1,5 @@
 <% form_assistant_for @setting do |form| %>
   <%= form.text_field :default_rate %>
+  <%= form.check_box :use_default_rate, :label => 'Use default rate automatically?' %>
   <p class="submission"><%= submit_tag 'Update Settings' %> or <%= form.cancel %></p>
 <% end %>
