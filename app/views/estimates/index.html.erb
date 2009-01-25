@@ -3,7 +3,7 @@
     <li class="<%= cycle 'odd', nil %>">
       <span class="options" style="display:none;">
         <%= link_to 'Edit', edit_estimate_path(estimate) %>
-        or <%= link_to 'Delete', estimate, :method => :delete, 
+        | <%= link_to 'Delete', estimate, :method => :delete, 
                 :confirm => 'Are you sure you want to delete this estimate?' %>
       </span>
       
