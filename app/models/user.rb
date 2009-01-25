@@ -2,11 +2,7 @@ require 'ostruct'
 
 class User < ActiveRecord::Base
   has_many :estimates
-  has_many :tasks, :dependent => :destroy do
-    def defaults(full = false)
-      all(:conditions => { :default => true }).map(&:description).uniq
-    end
-  end
+  has_many :tasks, :dependent => :destroy
   has_one :setting
   
   validates_presence_of :identity_url, :fullname, :email
@@ -29,7 +25,8 @@ class User < ActiveRecord::Base
   end
   
   def defaults
-    OpenStruct.new(:rate => setting.default_rate, :tasks => tasks.defaults)
+    OpenStruct.new(:rate => setting.default_rate, 
+      :tasks => setting.default_tasks.map(&:description))
   end
   
   def owns?(obj)
