@@ -12,9 +12,12 @@ class Estimate < ActiveRecord::Base
       }, :page => page, :per_page => options[:per_page] || 10)
   end
   
-  def total
+  def total(type)
     tasks.inject(0) do |sum, task|
-      sum += task.rate.to_i * task.hours.to_i
+      sum += case type
+      when :price then task.rate.to_i * task.hours.to_i 
+      when :hours then task.hours.to_i 
+      else 0 end
     end.to_s
   end
 end
