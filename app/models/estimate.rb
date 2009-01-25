@@ -1,5 +1,8 @@
 class Estimate < ActiveRecord::Base
-  has_many :tasks, :attributes => true, :dependent => :nullify
+  has_many :tasks, :attributes => true,
+    :discard_if => proc { |task|
+      task.description.blank? && task.hours.blank? && task.rate.blank?
+    }, :dependent => :nullify
   belongs_to :user
   
   named_scope :descending, :order => 'id DESC'

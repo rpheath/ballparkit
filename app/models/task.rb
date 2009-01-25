@@ -5,11 +5,6 @@ class Task < ActiveRecord::Base
   after_save :set_defaults
   
   attr_accessor :default
-  # 
-  # def default
-  #   return if new_record?
-  #   DefaultTask.found?(user.setting.id, description)
-  # end
 
 private
   def set_defaults
