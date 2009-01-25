@@ -3,6 +3,7 @@ class SettingsController < ApplicationController
   
   def index
     @setting = current_user.setting
+    @tasks   = current_user.defaults.tasks
   end
   
   def edit

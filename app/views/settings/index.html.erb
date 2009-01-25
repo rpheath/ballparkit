@@ -2,4 +2,14 @@
 
 <p>Your default rate is: <%= number_to_currency @setting.default_rate %></p>
 
+<br />
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task %></li>
+  <% end %>
+</ul>
+
+<br />
+
 <p><%= link_to 'Edit Settings', edit_setting_path(@setting) %></p>
