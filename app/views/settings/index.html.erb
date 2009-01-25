@@ -1,1 +1,5 @@
-<p>Find me in app/views/settings/index.html.erb</p>
+<h1>Your Current Settings</h1>
+
+<p>Your default rate is: <%= number_to_currency @setting.default_rate %></p>
+
+<p><%= link_to 'Edit Settings', edit_setting_path(@setting) %></p>

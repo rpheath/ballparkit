@@ -1,10 +1,21 @@
 class EstimatesController < ApplicationController
+  before_filter :get_estimate, :except => [:index]
+  
   def index
     @estimates = Estimate.paginated(current_user, params[:page])
   end
   
+  def show
+  end
+  
   def new
-    @estimate = Estimate.new
+    if current_user.defaults.tasks.blank?
+      5.times { @estimate.tasks.build }
+    else
+      current_user.defaults.tasks.map(&:description).each do |task|
+        @estimate.tasks.build :description => task
+      end
+    end
   end
   
   def create
@@ -17,11 +28,9 @@ class EstimatesController < ApplicationController
   end
   
   def edit
-    @estimate = Estimate.find(params[:id])
   end
   
   def update
-    @estimate = Estimate.find(params[:id])
     @estimate.update_attributes!(params[:estimate])
     notice "Successfully updated #{@estimate.title}"
     redirect_to estimates_path
@@ -30,10 +39,14 @@ class EstimatesController < ApplicationController
   end
   
   def destroy
-    @estimate = Estimate.find(params[:id])
     title = @estimate.title
     @estimate.destroy
     notice "Successfully deleted your #{title} estimate"
     redirect_to estimates_path
+  end
+
+private
+  def get_estimate
+    @estimate = params[:id] ? Estimate.find(params[:id]) : Estimate.new
   end
 end

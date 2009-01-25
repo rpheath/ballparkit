@@ -1,6 +1,13 @@
+require 'ostruct'
+
 class User < ActiveRecord::Base
   has_many :estimates
-  has_many :tasks
+  has_many :tasks, :dependent => :destroy do
+    def defaults(full = false)
+      all(:conditions => { :default => true })
+    end
+  end
+  has_one :setting
   
   validates_presence_of :identity_url, :fullname, :email
   validates_uniqueness_of :identity_url
@@ -20,8 +27,6 @@ private
       :email => sreg['email']
     )
     user
-  rescue ActiveRecord::RecordInvalid
-    []
   end
 
   def self.create_from_sreg!(identity_url, sreg)
@@ -31,10 +36,9 @@ private
       :fullname => sreg['fullname'],
       :email => sreg['email']
     )
-
+    Setting.create!(:user_id => user.id)
+    
     user
-  rescue ActiveRecord::RecordInvalid
-    []
   end
 
 public  
@@ -44,9 +48,15 @@ public
     else
       create_from_sreg!(identity_url, registration)
     end
+  rescue ActiveRecord::RecordInvalid
+    []
   end
   
   def name
     fullname.titleize
+  end
+  
+  def defaults
+    OpenStruct.new(:rate => setting.default_rate, :tasks => tasks.defaults)
   end
 end

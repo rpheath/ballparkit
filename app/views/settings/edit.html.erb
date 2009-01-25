@@ -1,0 +1,4 @@
+<% form_assistant_for @setting do |form| %>
+  <%= form.text_field :default_rate %>
+  <p class="submission"><%= submit_tag 'Update Settings' %> or <%= form.cancel %></p>
+<% end %>

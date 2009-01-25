@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090122225154) do
+ActiveRecord::Schema.define(:version => 20090125061011) do
 
   create_table "estimates", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(:version => 20090122225154) do
     t.integer "timestamp",                  :null => false
     t.string  "server_url"
     t.string  "salt",       :default => "", :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "default_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tasks", :force => true do |t|
