@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
   
   user_stamp Estimate, Task
+  
+protected
+  def ensure_permission!(object)
+    return if object.new_record? || current_user.owns?(object)
+    
+    warning "Sorry, you don't have permission to perform that action"
+    redirect_to send("#{controller_name}_path")
+  end
 end

@@ -12,7 +12,7 @@ class EstimatesController < ApplicationController
     if current_user.defaults.tasks.blank?
       5.times { @estimate.tasks.build }
     else
-      current_user.defaults.tasks.map(&:description).each do |task|
+      current_user.defaults.tasks.each do |task|
         @estimate.tasks.build :description => task
       end
     end
@@ -48,5 +48,6 @@ class EstimatesController < ApplicationController
 private
   def get_estimate
     @estimate = params[:id] ? Estimate.find(params[:id]) : Estimate.new
+    ensure_permission!(@estimate)
   end
 end
