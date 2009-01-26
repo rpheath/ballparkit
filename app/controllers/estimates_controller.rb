@@ -1,4 +1,5 @@
 class EstimatesController < ApplicationController
+  skip_before_filter :login_required, :only => :by_token
   before_filter :get_estimate, :except => [:index, :by_token]
   
   def index
