@@ -5,6 +5,8 @@
     <%= form.text_field :default_rate, :class => 'rate', :template => 'rate', :tip => 'Ex: 110.00, 100, 75.50, etc' %>
     <%= form.check_box :use_default_rate, :label => 'Use default rate automatically?' %>
     
+    <br /><br />
+    
     <h5>Default Tasks</h5>    
     <ul class="list" id="default_tasks">
       <%= form.render_associated_form @setting.default_tasks %>

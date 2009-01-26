@@ -87,7 +87,7 @@ div.settings .left p {
   margin-bottom: 15px;
 }
 div.settings .left p {
-  margin-bottom: 30px;
+  
 }
 div.settings .right h5 {
   font-size: 17px;
@@ -98,11 +98,11 @@ div.settings input.text {
   padding: 3px;
 }
 div.settings p.rate input.text {
-  width: 60px;
+  width: 55px;
   margin: 0 4px;
 }
 div.settings p.rate {
-  font-size: 16px;
+  font-size: 14px;
 }
 div.settings p.rate span {
   font-size: 13px;
