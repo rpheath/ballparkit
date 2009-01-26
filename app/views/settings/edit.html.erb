@@ -1,18 +1,16 @@
+<%= page_title 'Edit Your Settings' %>
+
 <% form_assistant_for @setting do |form| %>
-  <% render :layout => 'setting', :locals => { :support => Setting.support.default_rate } do %>
-    <p><%= form.text_field :default_rate %></p>
-  <% end %>
-
-  <% render :layout => 'setting', :locals => { :support => Setting.support.use_default_rate } do %>
-    <p><%= form.check_box :use_default_rate, :label => 'Use default rate automatically?' %></p>
-  <% end %>
-
-  <% render :layout => 'setting', :locals => { :support => Setting.support.tasks } do %>
-    <ul id="default_tasks">
+  <% render :layout => 'setting' do %>
+    <%= form.text_field :default_rate, :class => 'rate', :template => 'rate', :tip => 'Ex: 110.00, 100, 75.50, etc' %>
+    <%= form.check_box :use_default_rate, :label => 'Use default rate automatically?' %>
+    
+    <h5>Default Tasks</h5>    
+    <ul class="list" id="default_tasks">
       <%= form.render_associated_form @setting.default_tasks %>
     </ul>
     <%= form.add_associated_link image_tag('new_task.png'), @setting.default_tasks.build %>
+    
+    <p class="submission"><%= submit_tag 'Update Settings' %> or <%= form.cancel %></p>
   <% end %>
-  
-  <p class="submission"><%= submit_tag 'Update Settings' %> or <%= form.cancel %></p>
 <% end %>

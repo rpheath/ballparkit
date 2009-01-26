@@ -1,19 +1,36 @@
-<h1>Your Current Settings</h1>
-
-<% render :layout => 'setting', :locals => { :support => Setting.support.default_rate } do %>
-  <p>Your default rate is: <%= number_to_currency @setting.default_rate %></p>
+<% page_title do %>
+  <span><%= link_to 'Edit Settings', edit_setting_path(@setting), :class => 'red' %></span>
+  Customize Your Defaults
 <% end %>
 
-<% render :layout => 'setting', :locals => { :support => Setting.support.use_default_rate } do %>
-  <p><%= if @setting.use_default_rate? then 'You are using default rate' else 'No' end %></p>
-<% end %>
-
-<% render :layout => 'setting', :locals => { :support => Setting.support.tasks } do %>
-  <ul>
-    <% @tasks.each do |task| %>
-      <li><%= task %></li>
+<% render :layout => 'setting' do %>
+  <h5>Your Default Rate</h5>
+  <p>
+    <% unless @setting.default_rate.blank? %>
+      You've set your default rate at <strong><%= number_to_currency @setting.default_rate %></strong>.
+    <% else %>
+      You haven't set a default rate yet.
     <% end %>
-  </ul>
+  </p>
+  
+  <h5>Default Rate Settings</h5>
+  <p>
+    <% if @setting.use_default_rate? %>
+      Currently, Ballpark is set to automatically fill in your default rate when creating a new estimate 
+      (if a default rate exists, of course).
+    <% else %>
+      Currently, Ballpark is set to NOT automatically fill in your default rate when creating a new estimate.
+    <% end %>
+  </p>
+  
+  <h5>Your Default Tasks</h5>
+  <% unless @tasks.blank? %>
+    <ul class="checked">
+      <% @tasks.each do |task| %>
+        <li class="<%= cycle 'odd', nil %>"><%= task %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't setup any defaut tasks yet.</p>
+  <% end %>
 <% end %>
-
-<p><%= link_to 'Edit Settings', edit_setting_path(@setting) %></p>

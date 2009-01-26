@@ -54,6 +54,48 @@ a {
 a:hover {
   color: #111;
 }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix {
+  display: block;
+  clear: both;
+}
+h1, h2, h3, h4, h5,
+h5 label {
+  color: #333;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+h1 {
+  font-size: 27px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 21px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 14px;
+}
+.red {
+  color: #af0100;
+}
+em {
+  font-style: italic;
+}
+p {
+  line-height: 140%;
+  margin-bottom: 10px;
+}
 p.notice,
 p.warning,
 p.error {

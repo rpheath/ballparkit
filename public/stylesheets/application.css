@@ -10,11 +10,12 @@
 }
 #hdr h1 {
   font-size: 35px;
+  font-weight: normal;
   color: #555;
   letter-spacing: -1px;
   display: inline;
   position: relative;
-  padding-right: 120px;
+  padding-right: 200px;
 }
 #hdr h1 a.logo {
   float: left;
@@ -34,6 +35,8 @@ a#new-estimate {
   position: absolute;
   top: 0;
   right: 0;
+  width: 180px;
+  overflow: hidden;
 }
 #hdr h1 span.group span {
   font-size: 13px;
@@ -51,14 +54,92 @@ a#new-estimate {
 #content {
   margin-top: 20px;
 }
-ul.estimates {
+#content h1 {
+  font-size: 23px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f1f1;
+}
+#content h1 span {
+  float: right;
+  font-size: 12px;
+}
+div.settings .left {
+  width: 425px;
+}
+div.settings .left h5,
+div.settings .left h5 label {
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #222;
+}
+div.settings .right {
+  width: 325px;
+  padding: 15px;
+  background: #f7f7f7;
+  border: 1px dotted #ddd;
+}
+div.settings .right p,
+div.settings .left p {
+  font-size: 12px;
+  color: #444;
+  line-height: 150%;
+  margin-bottom: 15px;
+}
+div.settings .left p {
+  margin-bottom: 30px;
+}
+div.settings .right h5 {
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+div.settings input.text {
+  font-size: 13px;
+  padding: 3px;
+}
+div.settings p.rate input.text {
+  width: 60px;
+  margin: 0 4px;
+}
+div.settings p.rate {
+  font-size: 16px;
+}
+div.settings p.rate span {
+  font-size: 13px;
+  color: #999;
+}
+div.settings p.submission {
+  margin-top: 25px;
+}
+ul.estimates,
+ul.list {
   border-top: 1px solid #f1f1f1;
 }
-ul.estimates li {
+ul.estimates li,
+ul.list li {
   font-size: 18px;
   padding: 10px;
   border-bottom: 1px solid #f1f1f1;
   overflow: hidden;
+}
+ul.list li,
+ul.checked li {
+  font-size: 12px;
+  padding: 5px 5px 5px 25px;
+  color: #555;
+}
+ul.checked li {
+  background: url(../images/check.png) no-repeat 5px 4px;
+}
+ul#default_tasks {
+  margin-bottom: 10px;
+}
+ul.list li.default_task {
+  padding: 5px;
+}
+ul.list li.default_task input.text {
+  width: 80%;
+  margin-left: 5px;
 }
 ul.estimates li span.soft {
   color: #999;
@@ -68,8 +149,10 @@ ul.estimates li span.soft {
 ul.estimates li span.date {
   color: #999;
 }
-ul.estimates li.odd {
-  background: #f7f7f7;
+ul.estimates li.odd,
+ul.list li.odd,
+ul.checked li.odd {
+  background-color: #f7f7f7;
 }
 ul.estimates span.options,
 ul.estimates span.total {

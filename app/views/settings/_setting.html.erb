@@ -1,5 +1,33 @@
-<div class="row">
-  <p class="right"><%= support %></p>
-  <%= yield %>
+<div class="settings">
+  <div class="right">
+    <h5>Your Default Rate</h5>
+    <p>
+      Having a default rate allows Ballpark to assist with your estimates. You can have the rate field
+      automatically filled in (the default, see below), or you can click a "load default rate" link on the actual form 
+      to fill it in. Either way, it's just for convenience.
+    </p>
+    
+    <h5>Turning Your Default Rate off</h5>
+    <p>
+      If you have a default rate set, the rate field will be automatically filled in when you create 
+      a new estimate. Turn this option off if you'd rather fill in your default rate at your own discretion, by using
+      the provided link on the actual form.
+    </p>
+    
+    <h5>Creating Default Tasks</h5>
+    <p>
+      If your estimates always include certain tasks (e.g. "XHTML/CSS Development" or "Miscellaneous"), you can set
+      those tasks to be defaults. Then, when you create a new estimate, those tasks will automatically be loaded.
+    </p>
+    <p> 
+      You can set these tasks here by filling in your default tasks to the left, or you can set them on the fly 
+      as you create a new estimate by checking the "default" option on the estimate form.
+    </p>
+  </div>
+  
+  <div class="left">
+    <%= yield %>
+  </div>
+  
   <div class="clearfix"></div>
 </div>
