@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class Estimate < ActiveRecord::Base
   has_many :tasks, :attributes => true,
     :discard_if => proc { |task|
@@ -8,6 +10,8 @@ class Estimate < ActiveRecord::Base
   named_scope :descending, :order => 'id DESC'
   
   validates_presence_of :title
+  
+  after_create :tokenize
   
   def self.paginated(user, page, options = {})
     descending.paginate(:all, :conditions => { 
@@ -22,5 +26,15 @@ class Estimate < ActiveRecord::Base
       when :hours then task.hours.to_i 
       else 0 end
     end.to_s
+  end
+  
+private
+  def self.secure_digest(*args)
+    Digest::SHA1.hexdigest(args.flatten.join('--'))
+  end
+  
+  def tokenize
+    self[:token] = self.class.secure_digest(self[:id], self[:created_at], (1..10).map { rand.to_s })
+    save(false)
   end
 end

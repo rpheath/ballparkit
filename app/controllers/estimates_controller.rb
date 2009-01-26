@@ -1,11 +1,18 @@
 class EstimatesController < ApplicationController
-  before_filter :get_estimate, :except => [:index]
+  before_filter :get_estimate, :except => [:index, :by_token]
   
   def index
     @estimates = Estimate.paginated(current_user, params[:page])
   end
   
   def show
+  end
+  
+  def by_token
+    raise "Invalid Token" unless @estimate = Estimate.find_by_token(params[:token])
+  rescue Exception => e
+    warning e.message
+    redirect_to root_path
   end
   
   def new
