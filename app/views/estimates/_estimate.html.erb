@@ -1,0 +1,42 @@
+<div id="e">
+  <div id="header">
+    <label>Project Title</label>
+    <h1>
+      <span>
+        Last updated: <%= distance_of_time_in_words_to_now @estimate.updated_at %> ago
+        <% if logged_in? %>
+          <br />
+          <%= link_to('Edit', edit_estimate_path(@estimate)) %>
+          | <%= link_to('All', estimates_path) %>
+        <% end %>
+      </span>
+      <%= @estimate.title %>
+    </h1>
+  </div>
+  
+  <table id="tasks">
+    <tr>
+      <th class="description"><label>Task Description</label></th>
+      <th class="hours"><label>Hours</label></th>
+      <th class="rate"><label>Rate</label></th>
+      <th class="estimate aright"><label>Estimated Fee</label></th>
+    </tr>
+    <% @estimate.tasks.each do |task| %>
+      <tr class="<%= cycle 'odd', nil %>">
+        <td class="description"><%= task.description %></td>
+        <td class="hours"><span>x</span><%= task.hours %></td>
+        <td class="rate"><span>=</span><%= number_to_currency task.rate %></td>
+        <td class="estimate aright"><%= number_to_currency task.total %></td>
+      </tr>
+    <% end %>
+  </table>
+  
+  <table id="totals">
+    <tr>
+      <td class="description"><span class="soft">Totals:</span></td>
+      <td class="hours"><%= @estimate.total(:hours) %></td>
+      <td class="rate"></td>
+      <td class="estimate aright"><%= number_to_currency @estimate.total(:price) %></td>
+    </tr>
+  </table>
+</div>

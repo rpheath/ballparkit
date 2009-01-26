@@ -10,6 +10,7 @@ class EstimatesController < ApplicationController
   
   def by_token
     raise "Invalid Token" unless @estimate = Estimate.find_by_token(params[:token])
+    render :layout => 'public'
   rescue Exception => e
     warning e.message
     redirect_to root_path

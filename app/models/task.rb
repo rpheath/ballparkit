@@ -5,7 +5,11 @@ class Task < ActiveRecord::Base
   after_save :set_defaults
   
   attr_accessor :default
-
+  
+  def total
+    hours.to_f * rate.to_f
+  end
+  
 private
   def set_defaults
     task_exists = DefaultTask.found?(user.setting.id, description)

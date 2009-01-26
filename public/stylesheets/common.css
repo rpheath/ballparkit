@@ -137,3 +137,85 @@ p.error span {
 .errors {
   color: #af0100;
 }
+
+#e #header {
+  margin-bottom: 15px;
+  padding:  0 8px;
+  border-bottom: 1px dotted #ddd;
+}
+#e #header h1 {
+  color: #111;
+  font-size: 25px;
+  border: 0;
+}
+#e #header span {
+  color: #888;
+  font-size: 11px;
+  float: right;
+  letter-spacing: 0;
+  font-weight: normal;
+  text-align: right;
+  line-height: 140%;
+}
+#e label {
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  color: #999;
+  margin-bottom: 5px;
+}
+#e table {
+  width: 100%;
+}
+#e table td,
+#e table th {
+  vertical-align: top;
+  padding: 8px;
+  color: #222;
+}
+#e table#tasks td {
+  padding: 10px 8px;
+  font-size: 15px;
+}
+#e table .description {
+  width: 50%;
+}
+#e table .hours {
+  width: 15%;
+}
+#e table td.rate {
+  width: 15%;
+  text-align: left;
+  font-weight: normal;
+}
+#e table td.hours span,
+#e table td.rate span {
+  color: #aaa;
+  float: right;
+}
+#e table td.hours span {
+  margin-right: 28px;
+}
+#e table#tasks th,
+#e table tr td {
+  border-bottom: 1px solid #e5e5e5;
+}
+#e table tr.odd td {
+  background: #f5f5f5;
+}
+#e table .aright {
+  text-align: right;
+}
+#e table#totals {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 5px solid #aaa;
+}
+#e table#totals td {
+  font-size: 21px;
+  font-weight: bold;
+  background: #ffffcc;
+}
+#e table#totals .soft {
+  color: #888;
+}
