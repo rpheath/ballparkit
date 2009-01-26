@@ -1,15 +1,19 @@
 <h1>Your Current Settings</h1>
 
-<p>Your default rate is: <%= number_to_currency @setting.default_rate %></p>
+<% render :layout => 'setting', :locals => { :support => Setting.support.default_rate } do %>
+  <p>Your default rate is: <%= number_to_currency @setting.default_rate %></p>
+<% end %>
 
-<br />
+<% render :layout => 'setting', :locals => { :support => Setting.support.use_default_rate } do %>
+  <p><%= if @setting.use_default_rate? then 'You are using default rate' else 'No' end %></p>
+<% end %>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= task %></li>
-  <% end %>
-</ul>
-
-<br />
+<% render :layout => 'setting', :locals => { :support => Setting.support.tasks } do %>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <p><%= link_to 'Edit Settings', edit_setting_path(@setting) %></p>
