@@ -3,8 +3,8 @@ var hideFlashes = function() {
 }
 
 $.fn.zebra = function() {
-  $(this).find('tr, li').removeClass('odd').
-    end().find('tr:odd, li:odd').addClass('odd')
+  $(this).find('tr').removeClass('odd').
+    end().find('tr:odd').addClass('odd')
 }
 
 $(document).ready(function() {

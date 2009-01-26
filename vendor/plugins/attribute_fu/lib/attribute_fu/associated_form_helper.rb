@@ -55,7 +55,7 @@ module AttributeFu
       function = options.delete(:function) || ""
       
       function << "$(this).parents('#{css_selector}').remove();"
-      function << "$('#tasks, #default_tasks').zebra()"
+      function << "$('#tasks').zebra()"
       
       @template.link_to_function(name, function, *args.push(options))
     end
