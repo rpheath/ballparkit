@@ -4,33 +4,40 @@
 <% end %>
 
 <% render :layout => 'setting' do %>
-  <h5>Your Default Rate</h5>
-  <p>
-    <% unless @setting.default_rate.blank? %>
-      You've set your default rate at <strong><%= number_to_currency @setting.default_rate %></strong>.
-    <% else %>
-      You haven't set a default rate yet.
-    <% end %>
-  </p>
-  
-  <h5>Default Rate Settings</h5>
-  <p>
-    <% if @setting.use_default_rate? %>
-      Currently, Ballpark is set to automatically fill in your default rate when creating a new estimate 
-      (if a default rate exists, of course).
-    <% else %>
-      Currently, Ballpark is set to NOT automatically fill in your default rate when creating a new estimate.
-    <% end %>
-  </p>
-  
-  <h5>Your Default Tasks</h5>
-  <% unless @tasks.blank? %>
-    <ul class="checked">
-      <% @tasks.each do |task| %>
-        <li class="<%= cycle 'odd', nil %>"><%= task %></li>
+  <% section 'Your Default Rate' do %>
+    <p>
+      <% unless @setting.default_rate.blank? %>
+        You've set your default rate at <strong><%= number_to_currency @setting.default_rate %></strong>.
+      <% else %>
+        You haven't set a default rate yet.
       <% end %>
-    </ul>
-  <% else %>
-    <p>You haven't setup any defaut tasks yet.</p>
+    </p>
+  <% end %>
+  
+  <br />
+  
+  <% section 'Default Rate Settings' do %>
+    <p>
+      <% if @setting.use_default_rate? %>
+        Currently, Ballpark is set to automatically fill in your default rate when creating a new estimate 
+        (if a default rate exists, of course).
+      <% else %>
+        Currently, Ballpark is set to NOT automatically fill in your default rate when creating a new estimate.
+      <% end %>
+    </p>
+  <% end %>
+  
+  <br />
+  
+  <% section 'Your Default Tasks' do %>
+    <% unless @tasks.blank? %>
+      <ul class="checked">
+        <% @tasks.each do |task| %>
+          <li class="<%= cycle 'odd', nil %>"><%= task %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>You haven't setup any defaut tasks yet.</p>
+    <% end %>
   <% end %>
 <% end %>

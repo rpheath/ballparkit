@@ -8,7 +8,7 @@ $.fn.zebra = function() {
 }
 
 $(document).ready(function() {
-  setTimeout(hideFlashes, 25000);
+  setTimeout(hideFlashes, 25000)
   
   $(':input:visible:enabled:first').focus()
   
@@ -20,8 +20,8 @@ $(document).ready(function() {
   })
   
   $('ul.estimates li').mouseover(function() {
-    $(this).addClass('highlight').find('span.options').show();
+    $(this).addClass('highlight').find('span.options').show()
   }).mouseout(function() {
-    $(this).removeClass('highlight').find('span.options').hide();
+    $(this).removeClass('highlight').find('span.options').hide()
   })
 });

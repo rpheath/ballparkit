@@ -6,4 +6,8 @@ module ApplicationHelper
       content_tag(:h1, args.first)
     end
   end
+  
+  def section(title, &block)
+    concat(content_tag(:h5, title)) and yield
+  end
 end
