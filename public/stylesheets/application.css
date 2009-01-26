@@ -3,6 +3,35 @@
   margin: 20px auto;
   position: relative;
 }
+#welcome {
+  padding: 20px;
+  background: #f9f9d0;
+  border: 1px dashed #e1e1a0;
+  text-align: center;
+}
+#welcome h1 {
+  border: 0;
+  color: #111;
+  letter-spacing: -3px;
+  font-size: 35px !important;
+  margin-bottom: 0;
+}
+#welcome span {
+  display: block;
+  font-size: 14px;
+  color: #777;
+}
+#welcome p {
+  font-size: 18px;
+  margin: 20px 0 15px 0;
+  color: #555;
+}
+#welcome p a:link,
+#welcome p a:visited {
+  font-size: 20px;
+  color: #214f82;
+  font-weight: bold;
+}
 #hdr {
   border-bottom: 10px solid #e7e7e7;
   padding: 10px 0 20px 0;
@@ -61,7 +90,8 @@ a#new-estimate {
 }
 #content h1 span {
   float: right;
-  font-size: 12px;
+  font-size: 14px;
+  letter-spacing: 0;
 }
 div.settings .left {
   width: 425px;
@@ -85,9 +115,6 @@ div.settings .left p {
   color: #444;
   line-height: 150%;
   margin-bottom: 15px;
-}
-div.settings .left p {
-  
 }
 div.settings .right h5 {
   font-size: 17px;

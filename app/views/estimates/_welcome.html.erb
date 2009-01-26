@@ -1,0 +1,8 @@
+<div id="welcome">
+  <h1>Welcome to Ballpark It</h1>
+  <span>It's as easy as 1, 2, 3 (without the 3)</span>
+  <p>
+    To get started, <%= link_to 'add your first estimate', new_estimate_path %> or 
+    <%= link_to 'update your default settings', edit_setting_path(current_user.setting.id) %>.
+  </p>
+</div>
