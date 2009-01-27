@@ -55,6 +55,9 @@ a#new-estimate {
   top: 20px;
   right: 265px;
 }
+a.rate {
+  text-decoration: none;
+}
 #hdr h1 span.group {
   color: #999;
   font-size: 20px;
