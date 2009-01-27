@@ -18,16 +18,13 @@ $.fn.zebra = function() {
 $.fn.toCurrency = function() {
   var currency = Math.abs($(this).text()).toFixed(2),
       dollars  = currency.split('.')[0],
-      cents    = currency.split('.')[1],
-      dollar_length = dollars.length
+      cents    = currency.split('.')[1]
       
-  if (dollar_length > 3) {
-    dollars = dollars.substr(0, dollar_length % 3) + ',' + dollars.substr(dollar_length % 3, dollar_length)
-  }
+  for (var i = 0; i < Math.floor((dollars.length - (1 + i)) / 3); i++)
+  	dollars = dollars.substring(0, dollars.length - (4 * i + 3)) + ',' + 
+  	          dollars.substring(dollars.length - (4 * i + 3));
   
-  currency = dollars + '.' + cents
-  
-  $(this).text('$' + currency)
+  $(this).text('$' + dollars + '.' + cents)
 }
 
 // calculates a task total for a given row
