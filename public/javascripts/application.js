@@ -3,6 +3,11 @@ var hideFlashes = function() {
   $('p.notice, p.warning, p.error').fadeOut(1500)
 }
 
+// convenience way to check for characters
+$.fn.contains = function(character) {
+  this.toString().indexOf(character) > -1
+}
+
 // zebra stripes for tables
 $.fn.zebra = function() {
   $(this).find('tr').removeClass('odd').
@@ -11,7 +16,18 @@ $.fn.zebra = function() {
 
 // converts regular numbers to US dollar
 $.fn.toCurrency = function() {
-  $(this).text('$' + Math.abs($(this).text()).toFixed(2))
+  var currency = Math.abs($(this).text()).toFixed(2),
+      dollars  = currency.split('.')[0],
+      cents    = currency.split('.')[1],
+      dollar_length = dollars.length
+      
+  if (dollar_length > 3) {
+    dollars = dollars.substr(0, dollar_length % 3) + ',' + dollars.substr(dollar_length % 3, dollar_length)
+  }
+  
+  currency = dollars + '.' + cents
+  
+  $(this).text('$' + currency)
 }
 
 // calculates a task total for a given row
