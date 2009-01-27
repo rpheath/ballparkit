@@ -22,7 +22,7 @@ $.fn.toCurrency = function() {
       
   for (var i = 0; i < Math.floor((dollars.length - (1 + i)) / 3); i++)
   	dollars = dollars.substring(0, dollars.length - (4 * i + 3)) + ',' + 
-  	          dollars.substring(dollars.length - (4 * i + 3))
+  	  dollars.substring(dollars.length - (4 * i + 3))
   
   $(this).text('$' + dollars + '.' + cents)
 }
