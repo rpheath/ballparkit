@@ -1,22 +1,30 @@
+// fades flash messages
 var hideFlashes = function() {
   $('p.notice, p.warning, p.error').fadeOut(1500)
 }
 
+// zebra stripes for tables
 $.fn.zebra = function() {
   $(this).find('tr').removeClass('odd').
     end().find('tr:odd').addClass('odd')
 }
 
+// converts regular numbers to US dollar
 $.fn.toCurrency = function() {
   $(this).text('$' + Math.abs($(this).text()).toFixed(2))
 }
 
+// calculates a task total for a given row
 $.fn.writeTaskTotal = function(hours, rate) {
   $(this).html(hours * rate).toCurrency()
 }
 
+// estimate namespace
 $.extend({
   estimate: {
+    // totals the estimate form based on each
+    // task total; to force task totals to be
+    // reloaded, pass { reload: true }
     total: function(options) {
       var options = $.extend({
         reload: false
@@ -30,10 +38,11 @@ $.extend({
 
       $('#total span').text(total).toCurrency()
     },
+    // totals a task for a given row
     totalTasks: function() {
       $('input.hours, input.rate').each(function() {
         var hours = $(this).parents('.task').find('input.hours').val(),
-            rate  = $(this).parents('.task').find('input.rate').val().replace('$', '')
+            rate  = $(this).parents('.task').find('input.rate').val().replace(/\$|\,/g, '')
             span  = $(this).parents('.task').find('.estimate span')
 
         span.writeTaskTotal(hours, rate)
@@ -42,28 +51,36 @@ $.extend({
   }
 })
 
+// when the DOM loads...
 $(document).ready(function() {
   setTimeout(hideFlashes, 25000)
   
   $(':input:visible:enabled:first').focus()
   
+  // activate facebox links
   $('a[rel*=facebox]').facebox()
   
+  // activate form resetting
   $('form a[rel*=reset]').click(function() {
     $(this).parents('form')[0].reset()
     return false
   })
   
+  // fill in default rate in appropriate fields
   $('form a.rate').click(function() {
-    $('input.rate').val($(this).text().replace('$', ''))
+    $('input.rate').val($(this).text().replace(/\$|\,/g, ''))
     $.estimate.total({reload: true})
     return false
   })
   
+  // total the estimate form
   $.estimate.totalTasks()
   $.estimate.total()
+  
+  // bind the keyup to the estimate form so totals are live
   $('input.hours, input.rate').bind('keyup', function() { $.estimate.total({reload: true}) })
   
+  // show options on hover
   $('ul.estimates li').mouseover(function() {
     $(this).addClass('highlight').find('span.options').show()
   }).mouseout(function() {
