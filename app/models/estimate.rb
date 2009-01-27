@@ -22,8 +22,8 @@ class Estimate < ActiveRecord::Base
   def total(type)
     tasks.inject(0) do |sum, task|
       sum += case type
-      when :price then task.rate.to_i * task.hours.to_i 
-      when :hours then task.hours.to_i 
+      when :price then task.rate.to_f * task.hours.to_f 
+      when :hours then task.hours.to_f 
       else 0 end
     end.to_s
   end
