@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   skip_before_filter :login_required
   
   def new
-    render
+    redirect_to estimates_path if logged_in?
   end
   
   def create
