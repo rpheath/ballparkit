@@ -29,7 +29,11 @@ $.fn.toCurrency = function() {
 
 // calculates a task total for a given row
 $.fn.writeTaskTotal = function(hours, rate) {
-  $(this).html(hours * rate).toCurrency()
+  var hours = Number(hours),
+      rate  = Number(rate),
+      price = isNaN(hours) || isNaN(rate) ? 0 : hours * rate
+      
+  $(this).html(price).toCurrency()
 }
 
 // estimate namespace
