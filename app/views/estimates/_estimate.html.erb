@@ -3,7 +3,7 @@
     <label>Project Title</label>
     <h1>
       <span>
-        Last updated: <%= distance_of_time_in_words_to_now @estimate.updated_at %> ago
+        Updated <%= distance_of_time_in_words_to_now @estimate.updated_at %> ago
         <% if logged_in? %>
           <br />
           <%= link_to('Edit', edit_estimate_path(@estimate)) %>
