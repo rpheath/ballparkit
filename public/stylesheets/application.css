@@ -34,21 +34,21 @@
 }
 #hdr {
   border-bottom: 10px solid #e7e7e7;
-  padding: 10px 0 20px 0;
+  padding: 10px 0 0 0;
   margin-bottom: 5px;
+  position: relative;
 }
 #hdr h1 {
   font-size: 35px;
   font-weight: normal;
   color: #555;
   letter-spacing: -1px;
-  display: inline;
-  position: relative;
-  padding-right: 200px;
+  float: left;
+  margin-bottom: 0;
 }
 #hdr h1 a.logo {
   float: left;
-  margin-top: -4px;
+  margin-bottom: 0;
 }
 a#new-estimate {
   position: absolute;
@@ -64,11 +64,10 @@ a.rate {
   border-left: 1px solid #ddd;
   padding-left: 12px;
   line-height: 120%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 180px;
+  float: right;
+  width: 183px;
   overflow: hidden;
+  margin-left: 6px;
 }
 #hdr h1 span.group span {
   font-size: 13px;
@@ -82,6 +81,33 @@ a.rate {
 }
 #hdr h1 span a:hover {
   color: #111;
+}
+ul.navigation {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+ul.navigation li {
+  float: left;
+  margin-left: 2px;
+}
+ul.navigation li a {
+  display: block;
+  padding: 20px;
+  font-size: 20px;
+  text-transform: lowercase;
+  color: #777;
+  text-decoration: none;
+  background: #f9f9f9;
+}
+ul.navigation li a:hover {
+  color: #444;
+  background: #f5f5f5;
+}
+ul.navigation li.current a,
+ul.navigation li.current a:hover {
+  background: #e7e7e7;
+  color: #325270;
 }
 #content {
   margin-top: 20px;
@@ -329,33 +355,6 @@ p.submission {
 }
 p.submission input.submit {
   margin-right: 3px;
-}
-ul.navigation {
-  position: absolute;
-  top: 5px;
-  right: 0;
-}
-ul.navigation li {
-  float: left;
-  margin-left: 2px;
-}
-ul.navigation li a {
-  display: block;
-  padding: 20px;
-  font-size: 20px;
-  text-transform: lowercase;
-  color: #777;
-  text-decoration: none;
-  background: #f9f9f9;
-}
-ul.navigation li a:hover {
-  color: #444;
-  background: #f5f5f5;
-}
-ul.navigation li.current a,
-ul.navigation li.current a:hover {
-  background: #e7e7e7;
-  color: #325270;
 }
 #content .pagination {
   padding: 5px 0;
