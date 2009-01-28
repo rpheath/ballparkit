@@ -54,6 +54,13 @@ a {
 a:hover {
   color: #111;
 }
+.ie7 a:link,
+.ie7 a:visited {
+  color: #333;
+}
+.ie7 a:hover {
+  color: #111;
+}
 .left {
   float: left;
 }
@@ -178,7 +185,7 @@ p.error span {
   font-size: 15px;
 }
 #e table .description {
-  width: 50%;
+  width: 45%;
 }
 #e table .hours {
   width: 15%;
@@ -187,6 +194,9 @@ p.error span {
   width: 15%;
   text-align: left;
   font-weight: normal;
+}
+.win.gecko #e table td.rate {
+  width: 13%;
 }
 #e table td.hours span,
 #e table td.rate span {
