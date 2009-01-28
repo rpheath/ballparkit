@@ -64,6 +64,11 @@ $.extend({
 
         span.writeTaskTotal(hours, rate)
       })
+    },
+    // any events related to live estimates
+    bindListeners: function() {
+      // bind the keyup to the estimate form so totals are live
+      $('input.hours, input.rate').bind('keyup', function() { $.estimate.total({reload: true}) })
     }
   }
 })
@@ -72,10 +77,17 @@ $.extend({
 $(document).ready(function() {
   setTimeout(hideFlashes, 25000)
   
+  // go to the first textbox on the page
   $(':input:visible:enabled:first').focus()
   
   // activate facebox links
   $('a[rel*=facebox]').facebox()
+  
+  // launch external links
+  $('a[rel*=external]').click(function() {
+    window.open($(this).attr('href'))
+    return false
+  })
   
   // activate form resetting
   $('form a[rel*=reset]').click(function() {
@@ -90,12 +102,10 @@ $(document).ready(function() {
     return false
   })
   
-  // total the estimate form
+  // the estimate form
   $.estimate.totalTasks()
   $.estimate.total()
-  
-  // bind the keyup to the estimate form so totals are live
-  $('input.hours, input.rate').bind('keyup', function() { $.estimate.total({reload: true}) })
+  $.estimate.bindListeners()
   
   // show options on hover
   $('ul.estimates li').mouseover(function() {

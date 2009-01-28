@@ -2,19 +2,96 @@
   margin: 50px auto 25px auto;
   width: 800px;
 }
+#hdr {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 10px solid #eee;
+}
+#hdr p {
+  float: right;
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 28px;
+}
 #login {
-  border: 10px solid #eee;
   color: #777;
-  padding: 20px; 
+  padding: 10px 15px; 
+  margin: 0 10px;
+  border: 1px dotted #ddd;
+  border-top: 0;
+  border-bottom: 0;
 }
 #login label {
+  margin-top: 12px;
   display: block;
 }
 #login input#openid_url {
-  width: 400px;
+  width: 300px;
   padding: 5px 5px 5px 30px;
   font-size: 17px;
   margin: 8px 0;
-  background: url(../images/openid.jpg) no-repeat 5px center;
+  background: #fff url(../images/openid.jpg) no-repeat 5px center;
   border: 1px solid #ccc;
+}
+#login .openid {
+  float: right;
+  width: 360px;
+  padding: 10px;
+  background: #ffffcc;
+  border: 1px dotted #dcdd90;
+}
+#login .openid h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+#login .openid p {
+  font-size: 12px;
+  line-height: 150%;
+  color: #ad5d07;
+  color: #777;
+}
+form span {
+  color: #999;
+  font-size: 11px;
+  margin-left: 5px;
+}
+#info {
+  margin-top: 10px;
+  border-top: 10px solid #eee;
+  padding: 12px 0 0 10px;
+}
+#info img {
+  float: right;
+  margin-left: 20px;
+}
+#info h3 {
+  margin-top: 10px;
+  font-size: 30px;
+  letter-spacing: 0;
+  font-weight: normal;
+  font-family: times;
+}
+#info h3 span {
+  color: #aaa;
+  font-size: 0.7em;
+}
+#info ul {
+  margin-top: 30px;
+}
+#info ul li {
+  min-height: 65px;
+  padding-left: 65px;
+  font-size: 15px;
+  line-height: 140%;
+  color: #777;
+  margin-bottom: 35px;
+}
+#info li.one {
+  background: url(../images/one.png) no-repeat left top;
+}
+#info li.two {
+  background: url(../images/two.png) no-repeat left top;
+}
+#info li.three {
+  background: url(../images/three.png) no-repeat left top;
 }

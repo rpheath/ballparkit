@@ -4,5 +4,5 @@
   <td class="default"><%= f.check_box :default, :checked => DefaultTask.found?(current_user.setting.id, task.description) %></td>
   <td class="hours"><%= f.text_field :hours, :class => 'hours' %> x </td>
   <td class="rate"><%= f.text_field :rate, :class => 'rate', :value => default_rate %> = </td>
-  <td class="estimate"><span>$0</span></td>
+  <td class="estimate"><span>$0.00</span></td>
 </tr>

@@ -1,9 +1,25 @@
 <% render :layout => 'shared/public' do %>
   <div id="login">
+    <div class="openid">
+      <h3>What is OpenID?</h3>
+      <p>
+        OpenID eliminates the need for multiple usernames across different 
+        websites, simplifying your online experience.
+      </p>
+      <p>
+        Don't have an OpenID yet? 
+        <%= link_to 'Learn More', 'http://openid.net/what', :rel => 'external' %>
+        or <%= link_to 'Sign Up for one', 'http://www.myopenid.com/', :rel => 'external' %>.
+      </p>
+    </div>
+    
     <% form_tag session_path do %>
       <label>Login with OpenID:</label>
       <%= text_field_tag :openid_url, nil %>
-      <%= submit_tag 'Login' %>
+      <br />
+      <%= submit_tag 'Login' %> <span>( Ex: http://username.myopenid.com )</span>
     <% end -%>
+    
+    <div class="clearfix"></div>
   </div>
 <% end %>
