@@ -80,8 +80,8 @@ form span {
 }
 #info ul li {
   min-height: 65px;
-  padding-left: 65px;
-  font-size: 15px;
+  padding: 0 0 0 65px;
+  font-size: 14px;
   line-height: 140%;
   color: #777;
   margin-bottom: 35px;
