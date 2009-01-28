@@ -11,7 +11,7 @@
       <ul class="list" id="default_tasks">
         <%= form.render_associated_form @setting.default_tasks %>
       </ul>
-      <span class="inline"><%= form.check_box :clear_all, :label => 'Remove all Default Tasks' %></span>
+      <span class="inline"><%= form.check_box :clear_all, :class => 'clear', :label => 'Remove all Default Tasks' %></span>
       
       <%= form.add_associated_link image_tag('new_task.png'), @setting.default_tasks.build %>
       

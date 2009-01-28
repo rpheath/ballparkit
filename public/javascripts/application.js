@@ -59,9 +59,11 @@ $.extend({
     totalTasks: function() {
       $('input.hours, input.rate').each(function() {
         var hours = $(this).parents('.task').find('input.hours').val(),
-            rate  = $(this).parents('.task').find('input.rate').val().replace(/\$|\,/g, '')
+            rate  = $(this).parents('.task').find('input.rate').val(),
             span  = $(this).parents('.task').find('.estimate span')
-
+        
+        rate = rate ? rate.replace(/\$|\,/g, '') : rate
+            
         span.writeTaskTotal(hours, rate)
       })
     },
@@ -100,6 +102,14 @@ $(document).ready(function() {
     $('input.rate').val($(this).text().replace(/\$|\,/g, ''))
     $.estimate.total({reload: true})
     return false
+  })
+  
+  // disable tasks when clear_all is chosen
+  $('input.clear').click(function() {
+    var tasks = $('ul#default_tasks .default_task input.text'),
+        checked = this.checked
+    
+    tasks.each(function() { this.disabled = checked ? true : false })
   })
   
   // the estimate form
