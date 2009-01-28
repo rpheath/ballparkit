@@ -68,7 +68,7 @@ $.extend({
     // any events related to live estimates
     bindListeners: function() {
       // bind the keyup to the estimate form so totals are live
-      $('input.hours, input.rate').bind('keyup', function() { $.estimate.total({reload: true}) })
+      $('input.hours, input.rate').live('keyup', function() { $.estimate.total({reload: true}) })
     }
   }
 })
