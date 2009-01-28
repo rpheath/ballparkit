@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   before_save :normalize_url
   
   def self.login(identity_url, registration)
-    if exists?(:identity_url => identity_url)
+    if exists?(:identity_url => normalize_url(identity_url))
       update_from_sreg!(identity_url, registration)
     else
       create_from_sreg!(identity_url, registration)
@@ -35,11 +35,15 @@ class User < ActiveRecord::Base
   
 private
   def normalize_url
-    self[:identity_url] = OpenIdAuthentication.normalize_url(self[:identity_url])
+    self[:identity_url] = self.class.normalize_url(self[:identity_url])
+  end
+  
+  def self.normalize_url(identifier)
+    OpenIdAuthentication.normalize_identifier(identifier)
   end
   
   def self.update_from_sreg!(identity_url, sreg)
-    user = find_by_identity_url(identity_url)
+    user = find_by_identity_url(normalize_url(identity_url))
     user.update_attributes!(
       :nickname => sreg['nickname'],
       :fullname => sreg['fullname'],

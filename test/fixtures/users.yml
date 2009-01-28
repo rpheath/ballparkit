@@ -1,13 +1,5 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  nickname: MyString
-  fullname: MyString
-  email: MyString
-  identity_url: MyString
-
-two:
-  nickname: MyString
-  fullname: MyString
-  email: MyString
-  identity_url: MyString
+ryan:
+  nickname: 'rpheath'
+  fullname: 'ryan heath'
+  email: 'ryan@rpheath.com'
+  identity_url: 'http://ryan.myopenid.com'
