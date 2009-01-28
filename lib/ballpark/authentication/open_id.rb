@@ -17,9 +17,9 @@ module Ballpark
         end
         
       private
-        def successful_login(message = nil)
-          notice message || "Successfully logged in as #{current_user.name}"
-          redirect_to root_path
+        def successful_login
+          notice "Successfully logged in as #{current_user.name}"
+          redirect_to estimates_path
         end
 
         def failed_login(message = nil)

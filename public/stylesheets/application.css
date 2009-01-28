@@ -147,7 +147,7 @@ ul.list {
 }
 ul.estimates li,
 ul.list li {
-  font-size: 18px;
+  font-size: 15px;
   padding: 10px;
   border-bottom: 1px solid #f1f1f1;
   overflow: hidden;
@@ -189,9 +189,9 @@ ul.estimates span.total {
   float: right;
 }
 ul.estimates span.options {
-  font-size: 12px;
+  font-size: 11px;
   margin: -10px -10px -10px 10px;
-  padding: 12px 10px 14px 10px;
+  padding: 12px 10px 12px 10px;
   background: #ffffcc;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
