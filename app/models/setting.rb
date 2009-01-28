@@ -5,11 +5,12 @@ class Setting < ActiveRecord::Base
   has_many :default_tasks, :attributes => true,
     :discard_if => proc { |task| task.description.blank? }
   
-  def self.support
-    OpenStruct.new(
-      :default_rate => 'Default Rate support',
-      :use_default_rate => 'Using Default Rate support',
-      :tasks => 'Tasks support'
-    )
+  attr_accessor :clear_all
+  
+  after_save :clear_default_tasks?
+
+private
+  def clear_default_tasks?
+    default_tasks.each { |task| task.destroy } if clear_all.to_i == 1
   end
 end
