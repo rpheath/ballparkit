@@ -13,10 +13,21 @@ Default task:
  - the truth
 
 Estimate:
- - the truth
+ - should be a valid estimate
+ - should require an estimate title
+ - should list estimates in descending order by id
+ - should support pagination
+ - should create a unique SHA1 token after create
+ - should total hours
+ - should total price
+ - should return 0 for totals other than hours or price
 
 Setting:
- - the truth
+ - should delete all default tasks if clear_all is selected
+ - should only delete default tasks belonging to that setting
+ - should leave default tasks alone if clear_all is not selected
+ - default_rate should not be allowed to have a $ sign
+ - should not fail if default_rate is nil
 
 Task:
  - should create default tasks if default is selected on update
@@ -25,6 +36,8 @@ Task:
  - total should multiply task hours and task rate
  - total should be a Floating point value
  - total should not care about hours and rate format
+ - rate should not be allowed to have a $ sign
+ - should not fail if rate is nil
 
 User:
  - should be a valid user
@@ -34,7 +47,7 @@ User:
  - should normalize identity_url with missing http://
  - should normalize identity_url with trailing slash
  - should be an invalid identity_url
- - should successfully login for the first time
+ - should successfully login for the first time and create a new user
  - should create a setting the first time a user logs in
  - should not create a setting each time a user logs in
  - should successfully login and update the user's sreg info
