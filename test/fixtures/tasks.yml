@@ -1,11 +1,4 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  description: MyString
-  hours: MyString
-  rate: MyString
-
-two:
-  description: MyString
-  hours: MyString
-  rate: MyString
+misc:
+  description: 'Miscellaneous'
+  hours: '5'
+  rate: '50.00'
