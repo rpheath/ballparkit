@@ -14,7 +14,9 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'mislav-will_paginate', 
     :version => '~> 2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
-  
+  config.gem 'ruby-openid',
+    :version => '~> 2.0.4', :lib => 'openid'
+  config.gem 'colored'
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
