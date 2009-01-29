@@ -62,7 +62,7 @@ class UserTest < ActiveSupport::TestCase
       end
     end
   
-    test "should successfully login for the first time" do
+    test "should successfully login for the first time and create a new user" do
       assert_difference 'User.count' do
         User.login 'newuser.myopenid.com', attributes
       end

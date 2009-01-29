@@ -19,7 +19,12 @@ Setting:
  - the truth
 
 Task:
- - the truth
+ - should create default tasks if default is selected on update
+ - should delete default tasks if default is de-selected
+ - should not change default tasks if default is not chosen
+ - total should multiply task hours and task rate
+ - total should be a Floating point value
+ - total should not care about hours and rate format
 
 User:
  - should be a valid user
