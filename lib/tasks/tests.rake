@@ -7,6 +7,15 @@ end
 def stripe
   puts ("-" * 84 + "\n").yellow
 end
+
+namespace :test do  
+  Rake::TestTask.new(:helpers) do |t|
+    t.libs << "test"
+    t.pattern = 'test/helpers/**/*_test.rb'
+    t.verbose = true
+  end
+  Rake::Task['test:helpers'].comment = 'Run the helper tests in test/helpers'
+end
  
 namespace :tests do
   desc "Documents all tests in doc/TESTDOC"
@@ -37,6 +46,11 @@ namespace :tests do
     # functional tests
     banner "EXECUTING FUNCTIONAL TESTS"
     Rake::Task['test:functionals'].invoke
+    stripe
+    
+    # helper tests
+    banner "EXECUTING HELPER TESTS"
+    Rake::Task['test:helpers'].invoke
     stripe
     
     # integration tests

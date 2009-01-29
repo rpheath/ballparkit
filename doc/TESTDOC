@@ -7,10 +7,18 @@ Sessions controller:
 Settings controller:
  - the truth
 
+Application helper:
+ - something
+
+Estimates helper:
+ - something
+
 Browsing:
 
 Default task:
- - the truth
+ - should return true/false for task existence by setting and description (true case)
+ - should return true/false for task existence by setting and description (false case)
+ - should not care if description of task is proper case
 
 Estimate:
  - should be a valid estimate
