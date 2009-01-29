@@ -15,14 +15,15 @@
   letter-spacing: -3px;
   font-size: 35px !important;
   margin-bottom: 0;
+  border: 0 !important;
 }
 #welcome span {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
 }
 #welcome p {
-  font-size: 18px;
+  font-size: 20px;
   margin: 20px 0 15px 0;
   color: #555;
 }
@@ -30,7 +31,6 @@
 #welcome p a:visited {
   font-size: 20px;
   color: #214f82;
-  font-weight: bold;
 }
 #hdr {
   border-bottom: 10px solid #e7e7e7;
@@ -45,6 +45,10 @@
   letter-spacing: -1px;
   float: left;
   margin-bottom: 0;
+  width: 415px;
+}
+.ie7 #hdr h1 {
+  padding-bottom: 5px;
 }
 #hdr h1 a.logo {
   float: left;
@@ -54,6 +58,12 @@ a#new-estimate {
   position: absolute;
   top: 20px;
   right: 265px;
+}
+.ie7 a#new-estimate {
+  right: 250px;
+}
+.win.gecko a#new-estimate {
+  right: 250px;
 }
 a.rate {
   text-decoration: none;
@@ -65,7 +75,7 @@ a.rate {
   padding-left: 12px;
   line-height: 120%;
   float: right;
-  width: 183px;
+  width: 193px;
   overflow: hidden;
   margin-left: 6px;
 }
