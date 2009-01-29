@@ -9,10 +9,13 @@ h2. Getting Started
 From the project root...
 
 * mv database.yml.example database.yml
-* (configure database.yml)
+* _(configure database.yml)_
 * rake gems:install
 * rake db:create:all
 * rake db:schema:load
+* rake db:test:prepare
+* rake tests:run
+* _(ensure tests pass)_
 * script/server
 
 h2. License
