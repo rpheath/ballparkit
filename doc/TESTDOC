@@ -1,0 +1,39 @@
+Estimates controller:
+ - the truth
+
+Sessions controller:
+ - the truth
+
+Settings controller:
+ - the truth
+
+Browsing:
+
+Default task:
+ - the truth
+
+Estimate:
+ - the truth
+
+Setting:
+ - the truth
+
+Task:
+ - the truth
+
+User:
+ - should be a valid user
+ - should require and have errors on identity_url
+ - should require and have errors on fullname
+ - should require and have errors on email
+ - should normalize identity_url with missing http://
+ - should normalize identity_url with trailing slash
+ - should be an invalid identity_url
+ - should successfully login for the first time
+ - should create a setting the first time a user logs in
+ - should not create a setting each time a user logs in
+ - should successfully login and update the user's sreg info
+ - name should be titleized
+ - should return a OpenStruct collection of defaults
+ - should own a given object
+
