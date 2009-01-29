@@ -8,10 +8,15 @@ Settings controller:
  - the truth
 
 Application helper:
- - something
+ - should set page title without a block
+ - should set page title with a block
+ - should section content with a header and yield content
 
 Estimates helper:
- - something
+ - should return default rate for new records
+ - should return default rate for any format of price
+ - should return nil for existing records
+ - should return nil if user settings say not to use default rate
 
 Browsing:
 
