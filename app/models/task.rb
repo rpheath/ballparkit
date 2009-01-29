@@ -10,6 +10,10 @@ class Task < ActiveRecord::Base
     hours.to_f * rate.to_f
   end
   
+  def rate
+    read_attribute(:rate).to_s.gsub(/^\$/, '')
+  end
+  
 private
   def set_defaults
     task_exists = DefaultTask.found?(user.setting.id, description)

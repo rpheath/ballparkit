@@ -49,4 +49,14 @@ class TaskTest < ActiveSupport::TestCase
       assert_equal 1000.0, @task.total
       assert_kind_of Float, @task.total
     end
+    
+    test "rate should not be allowed to have a $ sign" do
+      @task.update_attributes(:rate => '$85.00')
+      assert_equal '85.00', @task.rate
+    end
+    
+    test "should not fail if rate is nil" do
+      @task.update_attributes(:rate => nil)
+      assert_equal '', @task.rate
+    end
 end
