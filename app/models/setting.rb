@@ -8,6 +8,10 @@ class Setting < ActiveRecord::Base
   attr_accessor :clear_all
   
   after_save :clear_default_tasks?
+  
+  def default_rate
+    read_attribute(:default_rate).to_s.gsub(/^\$/, '')
+  end
 
 private
   def clear_default_tasks?
