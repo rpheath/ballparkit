@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "should show login page" do
+    get :new
+    assert_response :success
   end
 end
