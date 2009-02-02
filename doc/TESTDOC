@@ -2,7 +2,7 @@ Estimates controller:
  - the truth
 
 Sessions controller:
- - the truth
+ - should show login page
 
 Settings controller:
  - the truth
