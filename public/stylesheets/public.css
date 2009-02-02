@@ -66,10 +66,9 @@ form span {
 }
 #info h3 {
   margin-top: 10px;
-  font-size: 30px;
-  letter-spacing: 0;
+  font-size: 28px;
+  letter-spacing: -1px;
   font-weight: normal;
-  font-family: times;
 }
 #info h3 span {
   color: #aaa;
