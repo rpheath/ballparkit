@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
   
   def create
     openid_authentication
-  rescue Exception => e
-    error e.message
+  rescue
     redirect_to login_path
   end
   
