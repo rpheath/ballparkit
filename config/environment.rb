@@ -1,4 +1,5 @@
-#ENV['RAILS_ENV'] ||= 'production'
+# ENV['RAILS_ENV'] ||= 'production'
+# ENV['TZ'] = 'US/Eastern'
 
 RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 
