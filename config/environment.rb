@@ -21,9 +21,9 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
-	  File.directory?(lib = "#{dir}/lib") ? lib : dir
-	end
+  # config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
+  #   File.directory?(lib = "#{dir}/lib") ? lib : dir
+  # end
 
   # Make Time.zone default to the specified zone, and make Active Record store time values
   # in the database in UTC, and return them converted to the specified local zone.
