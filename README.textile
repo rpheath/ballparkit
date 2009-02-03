@@ -10,15 +10,21 @@ h2. Getting Started in Development mode
 
 From the project root...
 
-* <pre><code>mv database.yml.example database.yml</code></pre>
-* _(configure database.yml)_
-* <pre><code>rake gems:install</code></pre>
-* <pre><code>rake db:create:all</code></pre>
-* <pre><code>rake db:schema:load</code></pre>
-* <pre><code>rake db:test:prepare</code></pre>
-* <pre><code>rake tests:run</code></pre>
-* _(ensure tests pass)_
-* <pre><code>script/server</code></pre>
+<pre><code>mv database.yml.example database.yml</code></pre>
+
+_(configure database.yml)_
+
+<pre><code>
+rake gems:install
+rake db:create:all
+rake db:schema:load
+rake db:test:prepare
+rake tests:run
+</code></pre>
+
+_(ensure tests pass)_
+
+<pre><code>script/server</code></pre>
 
 h2. License
 
