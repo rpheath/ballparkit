@@ -14,8 +14,7 @@ From the project root...
 
 _(configure database.yml)_
 
-<pre><code>
-rake gems:install
+<pre><code>rake gems:install
 rake db:create:all
 rake db:schema:load
 rake db:test:prepare
