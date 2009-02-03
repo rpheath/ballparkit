@@ -4,7 +4,7 @@ Ballpark is a tool that allows developers to estimate programming and/or design 
 
 But most importantly, it's a way for you to justify why you're charging so much :-)
 
-h2. Getting Started
+h2. Getting Started in Development mode
 
 From the project root...
 
