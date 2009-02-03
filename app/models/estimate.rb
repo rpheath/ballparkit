@@ -1,5 +1,11 @@
 require 'digest/sha1'
 
+module Ballpark
+  class InvalidToken < Error
+    message "Sorry, couldn't find estimate by that token"
+  end
+end
+
 class Estimate < ActiveRecord::Base
   has_many :tasks, :attributes => true,
     :discard_if => proc { |task|
@@ -17,6 +23,10 @@ class Estimate < ActiveRecord::Base
     descending.paginate(:all, :conditions => { 
         :user_id => user.id 
       }, :page => page, :per_page => options[:per_page] || per_page || 10)
+  end
+  
+  def self.find_by_token!(token)
+    find_by_token(token) or raise Ballpark::InvalidToken
   end
   
   def total(type)

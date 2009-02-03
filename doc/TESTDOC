@@ -1,11 +1,24 @@
 Estimates controller:
- - the truth
+ - should not allow GET to /estimates without being logged in
+ - should allow GET to /estimates and assign @estimates variable
+ - should find estimate by id on GET to 'show'
+ - should find estimate by id on GET to 'edit'
+ - should support public view of estimate (doesn't require a login)
+ - should rescue invalid token errors and handle appropriately
+ - should build empty tasks when user doesn't have default tasks
+ - should use default tasks when a user has default tasks
 
 Sessions controller:
  - should show login page
+ - should refuse login with blank OpenID
+ - should refuse login with malformed OpenID
+ - should logout successfully
 
 Settings controller:
- - the truth
+ - should not load settings without being logged in
+ - should load index on GET to /settings
+ - should find the @setting object by id on GET to /edit/1
+ - should not allow editing of settings not belonging to logged in user
 
 Application helper:
  - should set page title without a block
@@ -31,6 +44,8 @@ Estimate:
  - should list estimates in descending order by id
  - should support pagination
  - should create a unique SHA1 token after create
+ - should find an estimate by a token
+ - should raise InvalidToken error when invalid tokens
  - should total hours
  - should total price
  - should return 0 for totals other than hours or price

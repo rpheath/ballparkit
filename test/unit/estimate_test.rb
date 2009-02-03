@@ -55,6 +55,22 @@ class EstimateTest < ActiveSupport::TestCase
       assert_match /^[a-zA-Z0-9]{40}$/, @estimate.token
     end
     
+    test "should find an estimate by a token" do
+      @estimate.save
+      
+      new_estimate = Estimate.find_by_token!(@estimate.token)
+      assert_equal @estimate, new_estimate
+    end
+    
+    test "should raise InvalidToken error when invalid tokens" do
+      begin
+        @estimate.save
+        Estimate.find_by_token!(@estimate.token.chomp)
+      rescue Ballpark::InvalidToken => e
+        assert e.match(/invalid token/i)
+      end      
+    end
+    
     test "should total hours" do
       @estimate.save
       @estimate.expects(:tasks).returns(tasks(@estimate.id))

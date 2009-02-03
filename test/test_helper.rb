@@ -9,4 +9,12 @@ class Test::Unit::TestCase
   self.use_instantiated_fixtures  = false
 
   fixtures :all
+  
+  def login!
+    @controller.stubs(:login_required).returns(true)
+  end
+  
+  def logout!
+    @controller.stubs(:current_user).returns(false)    
+  end
 end

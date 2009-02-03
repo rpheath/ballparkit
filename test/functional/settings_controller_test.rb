@@ -9,10 +9,6 @@ class SettingsControllerTest < ActionController::TestCase
       @current_user.stubs(:setting).returns(@setting)
     end
     
-    def login!
-      @controller.stubs(:login_required).returns(true)
-    end
-  
   public
     test "should not load settings without being logged in" do
       @controller.stubs(:current_user).returns(false)

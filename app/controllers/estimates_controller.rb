@@ -10,11 +10,11 @@ class EstimatesController < ApplicationController
   end
   
   def by_token
-    raise "Invalid Token" unless @estimate = Estimate.find_by_token(params[:token])
+    @estimate = Estimate.find_by_token!(params[:token])
     render :layout => 'public'
-  rescue Exception => e
+  rescue Ballpark::InvalidToken => e
     warning e.message
-    redirect_to root_path
+    redirect_to estimates_path
   end
   
   def new
