@@ -70,7 +70,7 @@ class EstimatesControllerTest < ActionController::TestCase
       login!
       
       get :new
-      assert_equal 6, assigns(:estimate).tasks.size.to_i
+      assert_equal 2, assigns(:estimate).tasks.size.to_i
     end
     
     test "should use default tasks when a user has default tasks" do
@@ -89,5 +89,10 @@ class EstimatesControllerTest < ActionController::TestCase
       
       get :new
       assert_equal 2, assigns(:estimate).tasks.size.to_i
+    end
+    
+    test "should create a short url when creating estimates" do
+      Ballpark::UrlShortener.any_instance.expects(:process).once      
+      post :create, :estimate => { :title => 'Short URL Test Estimate' }
     end
 end
