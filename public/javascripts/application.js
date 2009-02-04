@@ -118,9 +118,7 @@ $(document).ready(function() {
   $.estimate.bindListeners()
   
   // show options on hover
-  $('ul.estimates li').mouseover(function() {
-    $(this).addClass('highlight').find('span.options').show()
-  }).mouseout(function() {
-    $(this).removeClass('highlight').find('span.options').hide()
-  })
+  $('ul.estimates li').
+    mouseover(function() { $(this).addClass('highlight') }).
+    mouseout(function() { $(this).removeClass('highlight') })
 });

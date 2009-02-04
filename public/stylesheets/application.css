@@ -184,6 +184,9 @@ ul.big li {
 ul.big li span.options img {
   margin: 0 0 -2px 5px;
 }
+ul.estimates li img {
+  margin: 0 0 -4px 0;
+}
 ul.estimates,
 ul.list {
   border-top: 1px solid #f1f1f1;
@@ -235,7 +238,7 @@ ul.estimates span.total {
 ul.estimates span.options {
   font-size: 11px;
   margin: -10px -10px -10px 10px;
-  padding: 12px 10px 12px 10px;
+  padding: 10px 10px 12px 10px;
   background: #ffffcc;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
