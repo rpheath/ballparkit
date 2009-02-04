@@ -19,7 +19,7 @@ class EstimatesController < ApplicationController
   
   def new
     if current_user.defaults.tasks.blank?
-      5.times { @estimate.tasks.build }
+      @estimate.tasks.build
     else
       current_user.defaults.tasks.each do |task|
         @estimate.tasks.build :description => task
