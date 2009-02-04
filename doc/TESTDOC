@@ -1,3 +1,8 @@
+Users controller:
+ - should not allow non-admin users to access admin area
+ - should allow admin users to access admin area
+ - should have users array on GET to index
+
 Estimates controller:
  - should not allow GET to /estimates without being logged in
  - should allow GET to /estimates and assign @estimates variable
@@ -70,11 +75,13 @@ Task:
 User:
  - should be a valid user
  - should require and have errors on identity_url
- - should require and have errors on fullname
+ - should require and have errors on nickname
  - should require and have errors on email
  - should normalize identity_url with missing http://
  - should normalize identity_url with trailing slash
  - should be an invalid identity_url
+ - should not be an admin by default
+ - should be an admin if super_user flag is set
  - should successfully login for the first time and create a new user
  - should create a setting the first time a user logs in
  - should not create a setting each time a user logs in

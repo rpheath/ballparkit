@@ -1,12 +1,22 @@
 require 'ostruct'
 
+module Ballpark
+  class NotAuthorized < Error
+    message "Sorry, you aren't authorized to perform that action"
+  end
+end
+
 class User < ActiveRecord::Base
-  has_many :estimates
+  has_many :estimates, :dependent => :destroy
   has_many :tasks, :dependent => :destroy
   has_one :setting
   
   validates_presence_of :identity_url, :nickname, :email
   validates_uniqueness_of :identity_url
+  
+  named_scope :descending, :order => 'id DESC'
+  
+  attr_protected :super_user
   
   before_save :normalize_url
   
@@ -16,6 +26,10 @@ class User < ActiveRecord::Base
     else
       create_from_sreg!(identity_url, registration)
     end
+  end
+  
+  def self.paginated(page, options = {})
+    descending.paginate(:all, :page => page, :per_page => options[:per_page] || per_page || 10)
   end
   
   def name
@@ -29,6 +43,10 @@ class User < ActiveRecord::Base
   
   def owns?(obj)
     obj.user_id == id
+  end
+  
+  def admin?
+    super_user?
   end
   
 private

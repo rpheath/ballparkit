@@ -1,0 +1,15 @@
+<ul class="list big">
+  <% @users.each do |user| %>
+    <li class="<%= cycle 'odd', nil %>">
+      <span class="right options">
+        <span class="soft">Signed Up on</span> <%= user.created_at.to_s(:full) %>
+        <%= link_to image_tag('delete.png'), admin_user_path(user), :method => :delete, 
+              :confirm => "Do you really want to delete #{user.name}?" %>
+      </span>
+      <span title="<%= user.email %>"><%= user.name %></span>
+      <span class="soft">(<%= pluralize(user.estimates.size, 'estimate') %>, <%= pluralize(user.tasks.size, 'task') %>)</span>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @users %>

@@ -14,7 +14,7 @@
       <div id="hdr">
         <h1>
           <span class="group">
-            <%= current_user.name %>
+            <%= current_user.admin? ? link_to(current_user.name, admin_users_path) : current_user.name %>
             <span><%= link_to 'Sign Out', logout_path %></span>
           </span>
           

@@ -177,6 +177,13 @@ div.settings p.rate span {
 div.settings p.submission {
   margin-top: 25px;
 }
+ul.big li {
+  font-size: 14px !important;
+  padding: 8px !important;
+}
+ul.big li span.options img {
+  margin: 0 0 -2px 5px;
+}
 ul.estimates,
 ul.list {
   border-top: 1px solid #f1f1f1;
@@ -207,7 +214,8 @@ ul.list li.default_task input.text {
   width: 80%;
   margin-left: 5px;
 }
-ul.estimates li span.soft {
+ul.estimates li span.soft,
+ul.list li span.soft {
   color: #999;
   font-size: 11px;
   margin: 0 3px;

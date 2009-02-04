@@ -5,6 +5,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :estimates
   map.resources :settings
   
+  map.namespace :admin do |admin|
+    admin.resources :users
+  end
+  
   map.estimate_by_token '/estimate/:token',
     :controller => 'estimates', :action => 'by_token',
     :requirements => { :token => /([a-zA-Z0-9]{40})/ }
