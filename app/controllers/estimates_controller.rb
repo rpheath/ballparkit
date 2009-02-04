@@ -3,7 +3,7 @@ class EstimatesController < ApplicationController
   before_filter :get_estimate, :except => [:index, :by_token]
   
   def index
-    @estimates = Estimate.paginated(current_user, params[:page])
+    @estimates = Estimate.paginated(current_user, params[:page], :per_page => 15)
   end
   
   def show
@@ -30,6 +30,7 @@ class EstimatesController < ApplicationController
   def create
     @estimate = Estimate.new(params[:estimate])
     @estimate.save!
+    Ballpark::UrlShortener.new(@estimate, request.host_with_port).process
     notice "Successfully created an estimate for: #{@estimate.title}"
     redirect_to estimates_path
   rescue ActiveRecord::RecordInvalid
