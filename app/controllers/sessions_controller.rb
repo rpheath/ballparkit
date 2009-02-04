@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
   
   def create
     openid_authentication
-  rescue
+  rescue ActiveRecord::RecordInvalid => e
+    error e.message
     redirect_to login_path
   end
   

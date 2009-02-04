@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :tasks, :dependent => :destroy
   has_one :setting
   
-  validates_presence_of :identity_url, :fullname, :email
+  validates_presence_of :identity_url, :nickname, :email
   validates_uniqueness_of :identity_url
   
   before_save :normalize_url
@@ -16,12 +16,10 @@ class User < ActiveRecord::Base
     else
       create_from_sreg!(identity_url, registration)
     end
-  rescue ActiveRecord::RecordInvalid
-    []
   end
   
   def name
-    fullname.titleize
+    fullname.blank? ? nickname : fullname.titleize
   end
   
   def defaults

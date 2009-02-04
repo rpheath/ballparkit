@@ -3,7 +3,7 @@ module Ballpark
     module OpenId
       protected
         def openid_authentication(identity_url = params[:openid_url])
-          authenticate_with_open_id(identity_url, :required => [:fullname, :email], :optional => [:nickname]) do |result, openid_url, sreg|
+          authenticate_with_open_id(identity_url, :required => [:nickname, :email], :optional => [:fullname]) do |result, openid_url, sreg|
             if result.successful?
               if self.current_user = User.login(openid_url, sreg)
                 successful_login
