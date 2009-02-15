@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
   
   def has_time_zone?
-    !self[:time_zone].blank?
+    !setting.time_zone.blank?
   end
   
 private

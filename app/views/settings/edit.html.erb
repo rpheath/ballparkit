@@ -7,9 +7,10 @@
     
     <br />
     
-    <h5>Your Time Zone</h5>
-    <p><%= select_tag :time_zone, time_zone_options_for_select(current_user.time_zone) %></p>
-    
+    <% section 'Your Time Zone' do %>
+      <%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, :label => false %>
+    <% end %>
+        
     <br />
     
     <% section 'Default Tasks' do %>    

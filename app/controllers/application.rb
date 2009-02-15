@@ -20,6 +20,6 @@ protected
   end
   
   def configure_time_zone
-    Time.zone = current_user.time_zone if logged_in? && current_user.has_time_zone?
+    Time.zone = current_user.setting.time_zone if logged_in? && current_user.has_time_zone?
   end
 end

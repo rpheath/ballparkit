@@ -32,9 +32,9 @@
   <% section 'Your Time Zone' do %>
     <p>
       <% if current_user.has_time_zone? %>
-        Your Time Zone is currently set to <%= current_user.time_zone %>.
+        Your Time Zone is currently set to <%= current_user.setting.time_zone %>.
       <% else %>
-        You haven't configured your Time Zone yet (defaults to <%= Time.zone %>).
+        You haven't configured your Time Zone yet (defaults to <%= Time.zone.name %>).
       <% end %>
     </p>
   <% end %>
