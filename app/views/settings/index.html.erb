@@ -29,6 +29,18 @@
   
   <br />
   
+  <% section 'Your Time Zone' do %>
+    <p>
+      <% if current_user.has_time_zone? %>
+        Your Time Zone is currently set to <%= current_user.time_zone %>.
+      <% else %>
+        You haven't configured your Time Zone yet (defaults to <%= Time.zone %>).
+      <% end %>
+    </p>
+  <% end %>
+  
+  <br />
+  
   <% section 'Your Default Tasks' do %>
     <% unless @tasks.blank? %>
       <ul class="checked">

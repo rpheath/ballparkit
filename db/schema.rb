@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090204184747) do
+ActiveRecord::Schema.define(:version => 20090215184039) do
 
   create_table "default_tasks", :force => true do |t|
     t.integer  "setting_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20090204184747) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "super_user",   :default => false
+    t.string   "time_zone"
   end
 
 end

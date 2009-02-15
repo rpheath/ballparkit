@@ -11,6 +11,7 @@ class SettingsController < ApplicationController
   
   def update
     @setting.update_attributes!(params[:setting])
+    current_user.update_attribute(:time_zone, params[:time_zone]) if params[:time_zone]
     notice "Your settings were successfully updated"
     redirect_to settings_path
   rescue ActiveRecord::RecordInvalid

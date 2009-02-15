@@ -5,7 +5,12 @@
     <%= form.text_field :default_rate, :class => 'rate', :template => 'rate', :tip => 'Ex: 110.00, 100, 75.50, etc' %>
     <%= form.check_box :use_default_rate, :label => 'Use default rate when creating a new estimate' %>
     
-    <br /><br />
+    <br />
+    
+    <h5>Your Time Zone</h5>
+    <p><%= select_tag :time_zone, time_zone_options_for_select(current_user.time_zone) %></p>
+    
+    <br />
     
     <% section 'Default Tasks' do %>    
       <ul class="list" id="default_tasks">

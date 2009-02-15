@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     super_user?
   end
   
+  def has_time_zone?
+    !self[:time_zone].blank?
+  end
+  
 private
   def normalize_url
     self[:identity_url] = self.class.normalize_url(self[:identity_url])
