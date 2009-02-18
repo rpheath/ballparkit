@@ -2,7 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'sessions', :action => 'new'
   
   map.resource :session
-  map.resources :estimates
+  map.resources :estimates,
+    :member => { :clone => :get }
   map.resources :settings
   
   map.namespace :admin do |admin|

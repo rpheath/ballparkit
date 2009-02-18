@@ -37,6 +37,12 @@ class EstimatesController < ApplicationController
     render :action => 'new'
   end
   
+  def clone
+    Ballpark::UrlShortener.new(@estimate.clone!, request.host_with_port).process
+    notice "Successfully cloned #{@estimate.title}"
+    redirect_to :back
+  end
+  
   def edit
   end
   

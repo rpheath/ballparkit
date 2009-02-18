@@ -10,7 +10,11 @@ class Estimate < ActiveRecord::Base
   has_many :tasks, :attributes => true,
     :discard_if => proc { |task|
       task.description.blank? && task.hours.blank? && task.rate.blank?
-    }, :dependent => :destroy
+    }, :dependent => :destroy do
+    def clone!
+      self.inject([]) { |tasks, t| tasks << t.clone! }
+    end
+  end
   belongs_to :user
   
   named_scope :descending, :order => 'id DESC'
@@ -36,6 +40,12 @@ class Estimate < ActiveRecord::Base
       when :hours then task.hours.to_f 
       else 0 end
     end.to_s
+  end
+  
+  def clone!
+    e = self.class.create(:title => "Copy of #{self.title}")
+    e.tasks << self.tasks.clone!
+    e.reload
   end
   
 private

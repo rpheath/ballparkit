@@ -3,7 +3,9 @@
     <% @estimates.each do |estimate| %>
       <li class="<%= cycle 'odd', nil %>">
         <span class="options">
-          <%= link_to 'Public URL', estimate.short_url %>
+          <%= link_to image_tag('clone.png'), clone_estimate_path(estimate), :title => 'Clone',
+                :confirm => "Are you sure you want to clone #{estimate.title}?" %>
+          | <%= link_to image_tag('public_url.png'), estimate.short_url, :title => "Public URL: #{estimate.short_url}" %>
           | <%= link_to image_tag('edit.png'), edit_estimate_path(estimate), :title => 'Edit' %>
           | <%= link_to image_tag('delete.png'), estimate, :method => :delete, :title => 'Delete',
                   :confirm => 'Are you sure you want to delete this estimate?' %>

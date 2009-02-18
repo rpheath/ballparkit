@@ -14,10 +14,17 @@ class Task < ActiveRecord::Base
     read_attribute(:rate).to_s.gsub(/^\$/, '')
   end
   
+  def clone!
+    self.class.create(:description => self.description, 
+      :hours => self.hours, :rate => self.rate, :default => nil)
+  end
+  
 private
   def set_defaults
+    return if default.nil?
+    
     task_exists = DefaultTask.found?(user.setting.id, description)
-
+    
     if default.to_i == 1 && !task_exists
       DefaultTask.create(:setting_id => user.setting.id, :description => description)
     elsif default.to_i == 0 && task_exists
