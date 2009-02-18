@@ -156,8 +156,12 @@ $(document).ready(function() {
   
   // show options on hover
   $('ul.estimates li').
-    mouseover(function() { $(this).addClass('highlight'); $(this).find('span.options').show() }).
-    mouseout(function() { $(this).removeClass('highlight'); $(this).find('span.options').hide() })
+    mouseover(function() { 
+      $(this).addClass('highlight').find('span.options').show() 
+    }).
+    mouseout(function() { 
+      $(this).removeClass('highlight').find('span.options').hide() 
+    })
   
   // tooltips for icons
   $('span.options a').tooltip({follow: true})
