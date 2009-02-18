@@ -242,10 +242,11 @@ ul.estimates span.options {
   background: #ffffcc;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
-  color: #999;
+  color: #333;
+  display: none;
 }
 ul.estimates span.options a {
-  margin: 0 2px;
+  margin: 0 3px;
   font-weight: bold;
 }
 .highlight {
@@ -376,6 +377,19 @@ p.submission {
 }
 p.submission input.submit {
   margin-right: 3px;
+}
+#tooltip {
+  position: absolute;
+  border: 1px solid #99C6D5;
+  background: #A8E4F8;
+  padding: 3px 7px;
+  font-size: 11px;
+  color: #365b6b;
+  display: none;
+  
+  border: 0; 
+  background: #191919;
+  color: #eee;
 }
 #content .pagination {
   padding: 5px 0;

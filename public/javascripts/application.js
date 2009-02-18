@@ -3,6 +3,43 @@ var hideFlashes = function() {
   $('p.notice, p.warning, p.error').fadeOut(1500)
 }
 
+// fancy tooltips
+$.fn.tooltip = function(options) {
+  var options = $.extend({
+    xOffset: 30, 
+    yOffset: 7,
+    follow: false
+  }, options)
+  
+  return this.each(function() {
+    $(this).hover(function(e) {
+      
+      // prevent duplicate "hovers"
+      this._title = this.title
+      this.title = ''
+      
+      $('body').append('<p id="tooltip">' + this._title + '</p>')
+      $('#tooltip').
+        css('top',  (e.pageY - options.yOffset) + 'px').
+        css('left', (e.pageX + options.xOffset) + 'px').
+        fadeIn('fast')
+    }, function() {
+      this.title = this._title
+      $('#tooltip').remove()
+    })
+    
+    // supports the option to follow the
+    // tooltip wherever the cursor goes
+    if (options.follow) {
+      $(this).mousemove(function(e) {
+        $('#tooltip').
+          css('top',  (e.pageY - options.yOffset) + 'px').
+          css('left', (e.pageX + options.xOffset) + 'px')
+      })
+    }
+  })
+}
+
 // convenience way to check for characters
 $.fn.contains = function(character) {
   this.toString().indexOf(character) > -1
@@ -119,6 +156,9 @@ $(document).ready(function() {
   
   // show options on hover
   $('ul.estimates li').
-    mouseover(function() { $(this).addClass('highlight') }).
-    mouseout(function() { $(this).removeClass('highlight') })
+    mouseover(function() { $(this).addClass('highlight'); $(this).find('span.options').show() }).
+    mouseout(function() { $(this).removeClass('highlight'); $(this).find('span.options').hide() })
+  
+  // tooltips for icons
+  $('span.options a').tooltip({follow: true})
 });
