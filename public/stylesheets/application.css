@@ -340,6 +340,20 @@ div#total span {
   color: #333;
   font-weight: bold;
 }
+div#discount {
+  width: 350px;
+  float: right;
+  text-align: right;
+  font-size: 18px;
+  color: #777;
+  padding-top: 5px;
+}
+div#discount input.text {
+  width: 35px;
+  margin: 0;
+  padding: 2px;
+  font-size: 13px;
+}
 label {
   color: #999;
   display: block;

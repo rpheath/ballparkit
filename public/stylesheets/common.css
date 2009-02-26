@@ -229,3 +229,19 @@ p.error span {
 #e table#totals .soft {
   color: #888;
 }
+#sub-total {
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+#sub-total p {
+  color: #999;
+  margin-bottom: 3px;
+}
+#sub-total p:first-child {
+  font-weight: bold;
+}
+#sub-total p span {
+  float: right;
+  width: 150px;
+}

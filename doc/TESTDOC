@@ -12,6 +12,7 @@ Estimates controller:
  - should rescue invalid token errors and handle appropriately
  - should build empty tasks when user doesn't have default tasks
  - should use default tasks when a user has default tasks
+ - should create a short url when creating estimates
 
 Sessions controller:
  - should show login page
@@ -35,6 +36,8 @@ Estimates helper:
  - should return default rate for any format of price
  - should return nil for existing records
  - should return nil if user settings say not to use default rate
+ - should yield the block with a discount
+ - should not yield block if no discount
 
 Browsing:
 
@@ -54,6 +57,10 @@ Estimate:
  - should total hours
  - should total price
  - should return 0 for totals other than hours or price
+ - should have a discount
+ - should return a total including the discount
+ - should return a sub-total (not include discount)
+ - sub-total should equal total price if no discount
 
 Setting:
  - should delete all default tasks if clear_all is selected

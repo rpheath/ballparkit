@@ -31,12 +31,29 @@
     <% end %>
   </table>
   
+  <% explain_discount do %>
+    <div id="sub-total">
+      <p>
+        <span><%= number_to_currency @estimate.sub_total %></span>
+        Sub-Total:
+      </p>
+      <p>
+        <span><%= number_to_percentage @estimate.discount, :precision => 2 %></span>
+        Discount:
+      </p>
+      <p>
+        <span>- <%= number_to_currency @estimate.savings %></span>
+        Savings:
+      </p>
+    </div>
+  <% end %>
+  
   <table id="totals">
     <tr>
       <td class="description"><span class="soft">Totals:</span></td>
-      <td class="hours"><%= @estimate.total(:hours) %></td>
+      <td class="hours"><%= @estimate.total_hours %></td>
       <td class="rate"></td>
-      <td class="estimate aright"><%= number_to_currency @estimate.total(:price) %></td>
+      <td class="estimate aright"><%= number_to_currency @estimate.total_price %></td>
     </tr>
   </table>
 </div>

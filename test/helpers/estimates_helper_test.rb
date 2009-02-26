@@ -37,4 +37,14 @@ class EstimatesHelperTest < ActionView::TestCase
     
       assert_nil default_rate
     end
+    
+    test "should yield the block with a discount" do
+      @estimate.discount = '10'
+      
+      assert_not_nil explain_discount { 'sub-total and stuff' }
+    end
+    
+    test "should not yield block if no discount" do
+      assert_nil explain_discount { 'sub-total and stuff' }
+    end
 end

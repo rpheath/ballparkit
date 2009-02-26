@@ -75,17 +75,41 @@ class EstimateTest < ActiveSupport::TestCase
       @estimate.save
       @estimate.expects(:tasks).returns(tasks(@estimate.id))
       
-      assert_equal '6.0', @estimate.total(:hours)
+      assert_equal '6.0', @estimate.total_hours
     end
     
     test "should total price" do
       @estimate.save
       @estimate.expects(:tasks).returns(tasks(@estimate.id))
       
-      assert_equal '60.0', @estimate.total(:price)
+      assert_equal '60.0', @estimate.total_price
     end
     
     test "should return 0 for totals other than hours or price" do
-      assert_equal '0', @estimate.total(:other)
+      assert_equal '0', @estimate.send(:total, :other)
+    end
+    
+    test "should have a discount" do
+      @estimate.discount = '10'
+      assert @estimate.has_discount?
+    end
+    
+    test "should return a total including the discount" do
+      @estimate.discount = '10'
+      @estimate.stubs(:tasks).returns(tasks(@estimate.id))
+      
+      assert_equal '54.0', @estimate.total_price
+    end
+    
+    test "should return a sub-total (not include discount)" do
+      @estimate.discount = '10'
+      @estimate.stubs(:tasks).returns(tasks(@estimate.id))
+      
+      assert_equal '60.0', @estimate.sub_total
+    end
+    
+    test "sub-total should equal total price if no discount" do
+      @estimate.stubs(:tasks).returns(tasks(@estimate.id))
+      assert_equal @estimate.sub_total, @estimate.total_price
     end
 end

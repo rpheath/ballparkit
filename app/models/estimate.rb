@@ -33,13 +33,21 @@ class Estimate < ActiveRecord::Base
     find_by_token(token) or raise Ballpark::InvalidToken
   end
   
-  def total(type)
-    tasks.inject(0) do |sum, task|
-      sum += case type
-      when :price then task.rate.to_f * task.hours.to_f 
-      when :hours then task.hours.to_f 
-      else 0 end
-    end.to_s
+  def total_price
+    total(:price, :apply_discount => true)
+  end
+  
+  def sub_total
+    total(:price, :apply_discount => false)
+  end
+  
+  def total_hours
+    total(:hours)
+  end
+  
+  def savings
+    return 0 unless has_discount?
+    (discount.to_f / 100) * total(:price, :discount => false).to_f
   end
   
   def clone!
@@ -48,7 +56,24 @@ class Estimate < ActiveRecord::Base
     e.reload
   end
   
+  def has_discount?
+    !discount.blank?
+  end
+  
 private
+  def total(type, options = {})
+    tot = tasks.inject(0) do |sum, task|
+      sum += case type
+      when :price then task.rate.to_f * task.hours.to_f 
+      when :hours then task.hours.to_f 
+      else 0 end
+    end.to_s 
+    
+    return tot if type == :hours
+    
+    (options[:apply_discount] ? tot.to_f - savings : tot).to_s
+  end
+  
   def self.secure_digest(*args)
     Digest::SHA1.hexdigest(args.flatten.join('--'))
   end

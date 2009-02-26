@@ -12,8 +12,8 @@
         </span>
       
         <span class="total">
-          <span class="soft"><%= pluralize estimate.total(:hours), 'hour' %></span>
-          <%= number_to_currency estimate.total(:price) %> 
+          <span class="soft"><%= pluralize estimate.total_hours, 'hour' %></span>
+          <%= number_to_currency estimate.total_price %> 
         </span>
       
         <span class="date" title="<%= estimate.created_at.to_s(:full) %>">

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090215201844) do
+ActiveRecord::Schema.define(:version => 20090226174409) do
 
   create_table "default_tasks", :force => true do |t|
     t.integer  "setting_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20090215201844) do
     t.datetime "updated_at"
     t.string   "token"
     t.string   "short_url"
+    t.string   "discount"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|

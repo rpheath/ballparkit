@@ -89,7 +89,9 @@ $.extend({
       $('.tasks .estimate span').each(function() {
         total += Math.abs($(this).text().replace(/\$|\,/g, ''))
       })
-
+      
+      if ($('input.discount').val()) total = $.estimate.discount.calculate(total)
+      
       $('#total span').text(total).toCurrency()
     },
     // totals a task for a given row
@@ -107,10 +109,24 @@ $.extend({
     // any events related to live estimates
     bindListeners: function() {
       // bind the keyup to the estimate form so totals are live
-      $('input.hours, input.rate').live('keyup', function() { $.estimate.total({reload: true}) })
+      $('input.hours, input.rate, input.discount').live('keyup', function() { $.estimate.total({reload: true}) })
     }
   }
 })
+
+// handle discounts
+$.estimate.discount = {
+  handle: function() {
+    $('#discount span').hide()
+    $('#discount p').show().find('input.discount').focus()
+  },
+  calculate: function(total) {
+    var discount = $('input.discount').val(),
+        percentageOff = parseFloat(discount)
+    
+    return percentageOff == NaN ? total : total - ((percentageOff/100) * total)
+  }
+}
 
 // when the DOM loads...
 $(document).ready(function() {

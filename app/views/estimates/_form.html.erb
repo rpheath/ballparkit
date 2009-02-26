@@ -24,6 +24,15 @@
 
 <br />
 
+<div id="discount">
+  <span style="<%= @estimate.has_discount? ? 'display:none' : nil %>">
+    <%= link_to_function 'Add Discount', '$.estimate.discount.handle()' %>
+  </span>
+  <p style="<%= @estimate.has_discount? ? nil : 'display:none' %>">
+    Discount: <%= text_field :estimate, :discount, :class => 'discount' %> %
+  </p>
+</div>
+  
 <%= form.add_associated_link image_tag('new_task.png'), @estimate.tasks.build %>
 
 <div id="total">
