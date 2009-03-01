@@ -11,13 +11,18 @@ set :deploy_via, :remote_cache
 set :user, "ryan"
 set :use_sudo, false
 
-task :update_config, :roles => [:app] do
-  desc "updates production configuration"
-  run "cp -Rf #{shared_path}/config/* #{release_path}/config/"
+desc "updates production configuration"
+task :symlink_config, :roles => [:app] do
+  # remove any existing files (from the repo)
+  run "rm -f #{release_path}/config/database.yml"
+  run "rm -f #{release_path}/config/environment.rb"
+  
+  # create symlinks to existing configuration in shared/
+  run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "ln -nfs #{shared_path}/config/environment.rb #{release_path}/config/environment.rb"
 end
-after "deploy:update_code", :update_config
+after "deploy:update_code", :symlink_config
 
-after "deploy", "deploy:migrations"
 after "deploy", "deploy:cleanup"
 after "deploy:migrations", "deploy:cleanup"
 
