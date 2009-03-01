@@ -8,8 +8,6 @@ set :deploy_to, "/var/www/#{application}"
 set :scm, :git
 set :deploy_via, :remote_cache
 
-ssh_options[:paranoid] = false
-
 set :user, "ryan"
 set :use_sudo, false
 
