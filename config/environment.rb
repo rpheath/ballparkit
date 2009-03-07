@@ -29,8 +29,6 @@ Rails::Initializer.run do |config|
   # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
   config.time_zone = 'Eastern Time (US & Canada)'
   
-  config.action_controller.page_cache_directory = Rails.root + '/public/cache/'
-  
   config.action_controller.session = {
     :session_key => '_ballpark_session',
     :secret      => '613c7b031ce2968fa5b09947b8c3ff12e8a4e35ba123e622efc13f1f5cd5dd1c2006bb6f8712c36fc1da13b7c7e95ee11148be0ebed076327d13b6bc236236e9'
