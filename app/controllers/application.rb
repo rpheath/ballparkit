@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   helper :all
 
-  protect_from_forgery # :secret => 'ef9f1e9e8f915529e00e54429916d821'
+  protect_from_forgery :secret => 'ef9f1e9e8f915529e00e54429916d821'
   
   before_filter :login_required
   before_filter :configure_time_zone
