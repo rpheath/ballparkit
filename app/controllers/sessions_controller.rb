@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   
   skip_before_filter :login_required
   
-  caches_page :new
+  # caches_page :new
   
   def new
     redirect_to estimates_path if logged_in?
