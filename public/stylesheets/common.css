@@ -109,6 +109,8 @@ p.error {
   font-size: 16px;
   padding: 17px 10px 18px 10px;
   margin-bottom: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 p.notice span,
 p.warning span,
