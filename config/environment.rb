@@ -1,6 +1,6 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
-RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -15,7 +15,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', 
     :version => '~> 2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'ruby-openid',
-    :version => '~> 2.0.4', :lib => 'openid'
+    :version => '~> 2.1.2', :lib => 'openid'
   config.gem 'colored'
 
   # Add additional load paths for your own custom dirs

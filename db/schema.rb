@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090226174409) do
+ActiveRecord::Schema.define(:version => 20090301151928) do
 
   create_table "default_tasks", :force => true do |t|
     t.integer  "setting_id"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(:version => 20090226174409) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",                  :null => false
+    t.integer "timestamp",  :null => false
     t.string  "server_url"
-    t.string  "salt",       :default => "", :null => false
+    t.string  "salt",       :null => false
   end
 
   create_table "settings", :force => true do |t|
