@@ -32,13 +32,17 @@
   margin: 8px 0;
   background: #fff url(../images/openid.jpg) no-repeat 5px center;
   border: 1px solid #ccc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }
 #login .openid {
   float: right;
   width: 360px;
   padding: 10px;
   background: #ffffcc;
-  border: 1px dotted #dcdd90;
+  border: 1px solid #dcdd90;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 #login .openid h3 {
   font-size: 16px;
