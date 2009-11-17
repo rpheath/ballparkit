@@ -36,9 +36,11 @@ $(document).ready(function() {
   })
   
   // the estimate form
-  $.estimate.totalTasks()
-  $.estimate.total()
-  $.estimate.bindListeners()
+  if ($.estimate) {
+    $.estimate.totalTasks()
+    $.estimate.total()
+    $.estimate.bindListeners()
+  }
   
   // show options on hover
   $('ul.estimates li').
@@ -49,6 +51,8 @@ $(document).ready(function() {
       $(this).removeClass('highlight').find('span.options').hide() 
     })
   
-  // tooltips for icons
-  $('span.options a').tooltip({follow: true})
+  try {
+    // tooltips for icons
+    $('span.options a').tooltip({follow: true})
+  } catch(e) { }
 });
