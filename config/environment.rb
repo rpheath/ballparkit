@@ -1,6 +1,6 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
-RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -12,11 +12,11 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'mislav-will_paginate', 
-    :version => '~> 2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
-  config.gem 'ruby-openid',
-    :version => '~> 2.1.2', :lib => 'openid'
-  config.gem 'colored'
+  # config.gem 'mislav-will_paginate', 
+  #   :version => '~> 2.3.6', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  # config.gem 'ruby-openid',
+  #   :version => '~> 2.1.2', :lib => 'openid'
+  # config.gem 'colored'
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
